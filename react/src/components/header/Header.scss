@@ -1,0 +1,9 @@
+.header{
+  font-size: 20px;
+  text-align: center;
+  &__navigation{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+  }
+}
