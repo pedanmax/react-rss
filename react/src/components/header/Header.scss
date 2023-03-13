@@ -1,11 +1,15 @@
 .header{
   font-size: 20px;
   text-align: center;
-  padding-top: 20px;
+  padding: 20px 0px;
+  border-bottom: 1px solid #000;
   &__navigation{
     display: flex;
     gap: 30px;
     justify-content: center;
+  }
+  &__item{
+    color: #4e4e4e;
   }
 }
 

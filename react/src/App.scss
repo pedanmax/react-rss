@@ -30,3 +30,10 @@ img {
 }
 
 /* ================================================================ */
+
+.App{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: rgb(197, 196, 196);
+}
