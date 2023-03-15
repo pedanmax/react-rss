@@ -1,5 +1,4 @@
 import React from 'react';
-import cards from '../../../data/cards.json';
 import { CardType } from 'types/Types';
 import './Card.scss';
 
