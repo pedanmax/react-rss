@@ -1,6 +1,6 @@
 import React from 'react';
 import Search from './Search/Search';
-import Card from './Card/Card';
+import CardList from './CardList/CardList';
 import './Home.scss';
 
 class Home extends React.Component {
@@ -11,7 +11,7 @@ class Home extends React.Component {
           <div className='home__search'>
             <Search />
           </div>
-          <Card />
+          <CardList />
         </div>
       </div>
     );

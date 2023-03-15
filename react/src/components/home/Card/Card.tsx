@@ -1,20 +1,22 @@
 import React from 'react';
 import cards from '../../../data/cards.json';
+import { CardType } from 'types/Types';
 import './Card.scss';
 
-console.log(cards);
-
-class Card extends React.Component {
+class Card extends React.Component<CardType> {
+  constructor(props: CardType) {
+    super(props);
+  }
   render() {
     return (
       <div className='card'>
-        <img className='card__img' src={cards[0].img}></img>
+        <img className='card__img' src={this.props.img}></img>
         <div className='card__info'>
-          <div className='card__title'>Name: {cards[0].title}</div>
-          <div className='card__year'>Year: {cards[0].year}</div>
-          <div className='card__year'>Country: {cards[0].country}</div>
-          <div className='card__year'>Genre: {cards[0].genre}</div>
-          <div className='card__year'>Views: {cards[0].views}</div>
+          <div className='card__title'>Name: {this.props.title}</div>
+          <div className='card__year'>Year: {this.props.year}</div>
+          <div className='card__year'>Country: {this.props.country}</div>
+          <div className='card__year'>Genre: {this.props.genre}</div>
+          <div className='card__year'>Views: {this.props.views}</div>
         </div>
       </div>
     );

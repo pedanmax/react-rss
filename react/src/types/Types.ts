@@ -2,7 +2,7 @@ export type StateInput = {
   value: string;
 };
 
-export type Card = {
+export type CardType = {
   title: string;
   img: string;
   views: number;
