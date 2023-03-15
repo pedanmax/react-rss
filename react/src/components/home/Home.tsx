@@ -1,5 +1,6 @@
 import React from 'react';
 import Search from './Search/Search';
+import Card from './Card/Card';
 import './Home.scss';
 
 class Home extends React.Component {
@@ -7,7 +8,10 @@ class Home extends React.Component {
     return (
       <div className='home'>
         <div className='home__container'>
-          <Search />
+          <div className='home__search'>
+            <Search />
+          </div>
+          <Card />
         </div>
       </div>
     );
