@@ -1,98 +1,98 @@
 [
   {
-    "title" : "Black Panther",
-    "img" : "https://media1.fdncms.com/connectsavannah/imager/u/original/7210229/black-panther-poster.jpg",
-    "views" : 1003,
-    "year" : 2018,
-    "country" : "USA",
-    "genre" : "Fantastic"
+    "title": "Black Panther",
+    "img": "https://media1.fdncms.com/connectsavannah/imager/u/original/7210229/black-panther-poster.jpg",
+    "views": 1003,
+    "year": 2018,
+    "country": "USA",
+    "genre": "Fantastic"
   },
   {
-    "title" : "Zama",
-    "img" : "https://upload.wikimedia.org/wikipedia/en/f/f2/Zama_%282017_film%29.png",
-    "views" : 2333,
-    "year" : 2018,
-    "country" : "Argentina",
-    "genre" : "Historical drama"
+    "title": "Zama",
+    "img": "https://upload.wikimedia.org/wikipedia/en/f/f2/Zama_%282017_film%29.png",
+    "views": 2333,
+    "year": 2018,
+    "country": "Argentina",
+    "genre": "Historical drama"
   },
   {
-    "title" : "The Tribe",
-    "img" : "https://upload.wikimedia.org/wikipedia/en/6/6a/The_Tribe_poster.jpg",
-    "views" : 1111,
-    "year" : 2014,
-    "country" : "Netherlands / Ukraine",
-    "genre" : "Crime"
+    "title": "The Tribe",
+    "img": "https://upload.wikimedia.org/wikipedia/en/6/6a/The_Tribe_poster.jpg",
+    "views": 1111,
+    "year": 2014,
+    "country": "Netherlands / Ukraine",
+    "genre": "Crime"
   },
   {
-    "title" : "Lincoln",
-    "img" : "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRXF7IGp_s2qOP-S7-hbfk7WhMl1Ne6SE8IfJqjkndggk9cHPmT",
-    "views" : 12003,
-    "year" : 2012,
-    "country" : "USA",
-    "genre" : "Historical drama"
+    "title": "Lincoln",
+    "img": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRXF7IGp_s2qOP-S7-hbfk7WhMl1Ne6SE8IfJqjkndggk9cHPmT",
+    "views": 12003,
+    "year": 2012,
+    "country": "USA",
+    "genre": "Historical drama"
   },
   {
-    "title" : "Personal Shopper",
-    "img" : "https://upload.wikimedia.org/wikipedia/en/6/67/Personal_Shopper_poster.jpg",
-    "views" : 1456,
-    "year" : 2016,
-    "country" : "France / Germany",
-    "genre" : "psychological thriller"
+    "title": "Personal Shopper",
+    "img": "https://upload.wikimedia.org/wikipedia/en/6/67/Personal_Shopper_poster.jpg",
+    "views": 1456,
+    "year": 2016,
+    "country": "France / Germany",
+    "genre": "psychological thriller"
   },
   {
-    "title" : "Black Coal, Thin Ice",
-    "img" : "https://upload.wikimedia.org/wikipedia/en/9/94/Black_Coal%2C_Thin_Ice_Poster.jpg",
-    "views" : 11233,
-    "year" : 2014,
-    "country" : "China",
-    "genre" : "Thriller"
+    "title": "Black Coal, Thin Ice",
+    "img": "https://upload.wikimedia.org/wikipedia/en/9/94/Black_Coal%2C_Thin_Ice_Poster.jpg",
+    "views": 11233,
+    "year": 2014,
+    "country": "China",
+    "genre": "Thriller"
   },
   {
-    "title" : "Hereditary",
-    "img" : "https://upload.wikimedia.org/wikipedia/en/d/d9/Hereditary.png",
-    "views" : 11233,
-    "year" : 2018,
-    "country" : "USA",
-    "genre" : "Psychological horro"
+    "title": "Hereditary",
+    "img": "https://upload.wikimedia.org/wikipedia/en/d/d9/Hereditary.png",
+    "views": 11233,
+    "year": 2018,
+    "country": "USA",
+    "genre": "Psychological horro"
   },
   {
-    "title" : "Amour",
-    "img" : "https://upload.wikimedia.org/wikipedia/en/9/95/Amour-poster-french.jpg",
-    "views" : 11233,
-    "year" : 2012,
-    "country" : "France",
-    "genre" : "Romantic drama"
+    "title": "Amour",
+    "img": "https://upload.wikimedia.org/wikipedia/en/9/95/Amour-poster-french.jpg",
+    "views": 11233,
+    "year": 2012,
+    "country": "France",
+    "genre": "Romantic drama"
   },
   {
-    "title" : "Elena",
-    "img" : "https://upload.wikimedia.org/wikipedia/en/6/6c/Elena_film.jpg",
-    "views" : 11233,
-    "year" : 2011,
-    "country" : "Russia",
-    "genre" : "Crime drama"
-  },  
-  {
-    "title" : "I Am Not Your Negro",
-    "img" : "https://upload.wikimedia.org/wikipedia/en/3/31/I_Am_Not_Your_Negro.png",
-    "views" : 11233,
-    "year" : 2016,
-    "country" : "USA / Germany",
-    "genre" : "Documentary"
+    "title": "Elena",
+    "img": "https://upload.wikimedia.org/wikipedia/en/6/6c/Elena_film.jpg",
+    "views": 11233,
+    "year": 2011,
+    "country": "Russia",
+    "genre": "Crime drama"
   },
   {
-    "title" : "Call Me By Your Name",
-    "img" : "https://upload.wikimedia.org/wikipedia/en/c/c9/CallMeByYourName2017.png",
-    "views" : 11233,
-    "year" : 2017,
-    "country" : "Italy",
-    "genre" : "Romantic drama"
+    "title": "I Am Not Your Negro",
+    "img": "https://upload.wikimedia.org/wikipedia/en/3/31/I_Am_Not_Your_Negro.png",
+    "views": 11233,
+    "year": 2016,
+    "country": "USA / Germany",
+    "genre": "Documentary"
   },
   {
-    "title" : "First Reformed",
-    "img" : "https://upload.wikimedia.org/wikipedia/en/8/84/First_Reformed.png",
-    "views" : 11233,
-    "year" : 2017,
-    "country" : "USA",
-    "genre" : "Psychological drama"
+    "title": "Call Me By Your Name",
+    "img": "https://upload.wikimedia.org/wikipedia/en/c/c9/CallMeByYourName2017.png",
+    "views": 11233,
+    "year": 2017,
+    "country": "Italy",
+    "genre": "Romantic drama"
+  },
+  {
+    "title": "First Reformed",
+    "img": "https://upload.wikimedia.org/wikipedia/en/8/84/First_Reformed.png",
+    "views": 11233,
+    "year": 2017,
+    "country": "USA",
+    "genre": "Psychological drama"
   }
 ]

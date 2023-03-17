@@ -8,7 +8,7 @@ class Card extends React.Component<CardType> {
   }
   render() {
     return (
-      <div className='card'>
+      <div className='card' role='card-of-cardlist'>
         <img className='card__img' src={this.props.img}></img>
         <div className='card__info'>
           <div className='card__title'>Name: {this.props.title}</div>
