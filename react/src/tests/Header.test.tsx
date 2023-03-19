@@ -4,17 +4,18 @@ import Header from '../components/header/Header';
 import { describe, it, expect } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
 
+beforeEach(() => {
+  render(
+    <BrowserRouter>
+      <Header />
+    </BrowserRouter>
+  );
+});
+
 describe('Header', () => {
   it('render name current page', () => {
-    render(
-      <BrowserRouter>
-        <Header />
-      </BrowserRouter>
-    );
-
     const homeLink = screen.getByText('Home');
     const aboutLink = screen.getByText('About');
-
     fireEvent.click(homeLink);
     expect(
       screen.getByRole('heading', {
@@ -31,12 +32,6 @@ describe('Header', () => {
   });
 
   it('add active class to link in navigation by click', () => {
-    render(
-      <BrowserRouter>
-        <Header />
-      </BrowserRouter>
-    );
-
     const homeLink = screen.getByText('Home');
     const aboutLink = screen.getByText('About');
 
