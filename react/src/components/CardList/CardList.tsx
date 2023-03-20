@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
-import cards from '../../../data/cards.json';
+import cards from '../../data/cards.json';
 
 class CardList extends React.Component {
   render() {

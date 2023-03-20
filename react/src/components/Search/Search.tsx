@@ -1,6 +1,6 @@
 import React from 'react';
 import { StateInput } from 'types/Types';
-import '../Home.scss';
+import '../../pages/home/Home.scss';
 
 class Search extends React.Component<Record<string, never>, StateInput> {
   constructor(props: Record<string, never>) {

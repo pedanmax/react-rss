@@ -1,6 +1,6 @@
 import React from 'react';
-import Search from './Search/Search';
-import CardList from './CardList/CardList';
+import Search from '../../components/Search/Search';
+import CardList from '../../components/CardList/CardList';
 import './Home.scss';
 
 class Home extends React.Component {
