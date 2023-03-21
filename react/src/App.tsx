@@ -5,7 +5,7 @@ import About from './pages/About/About';
 import NotFound from './pages/NotFound/NotFound';
 import { Routes, Route } from 'react-router-dom';
 import './App.scss';
-import Form from './pages/Form/Form';
+import Form from './pages/FormPage/FormPage';
 
 class App extends React.Component {
   render() {
