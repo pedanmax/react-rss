@@ -1,7 +1,10 @@
 import React from 'react';
 
-class CheckBoxInput extends React.Component<{ label: string }> {
-  constructor(props: { label: string }) {
+class CheckBoxInput extends React.Component<{
+  label: string;
+  refProp: React.RefObject<HTMLInputElement>[];
+}> {
+  constructor(props: { label: string; refProp: React.RefObject<HTMLInputElement>[] }) {
     super(props);
   }
   render() {
@@ -9,15 +12,36 @@ class CheckBoxInput extends React.Component<{ label: string }> {
       <div className='form__box'>
         <div className='form__inputs'>
           <div className='form__input-box'>
-            <input type='checkbox' className='form__checkbox' name='checkbox1' />
+            <input
+              type='checkbox'
+              name='checkbox'
+              className='form__checkbox'
+              ref={this.props.refProp[0]}
+              value='English'
+              id='checkbox1'
+            />
             <label htmlFor='checkbox1'>English</label>
           </div>
           <div className='form__input-box'>
-            <input type='checkbox' className='form__checkbox' name='checkbox2' />
+            <input
+              type='checkbox'
+              name='checkbox'
+              className='form__checkbox'
+              ref={this.props.refProp[1]}
+              value='Ukrainian'
+              id='checkbox2'
+            />
             <label htmlFor='checkbox2'>Ukrainian</label>
           </div>
           <div className='form__input-box'>
-            <input type='checkbox' className='form__checkbox' name='checkbox3' />
+            <input
+              type='checkbox'
+              name='checkbox'
+              className='form__checkbox'
+              ref={this.props.refProp[2]}
+              value='Spanish'
+              id='checkbox3'
+            />
             <label htmlFor='checkbox3'>Spanish</label>
           </div>
         </div>

@@ -1,7 +1,10 @@
 import React from 'react';
 
-class RadioInput extends React.Component<{ label: string }> {
-  constructor(props: { label: string }) {
+class RadioInput extends React.Component<{
+  label: string;
+  refProp: React.RefObject<HTMLInputElement>[];
+}> {
+  constructor(props: { label: string; refProp: React.RefObject<HTMLInputElement>[] }) {
     super(props);
   }
   render() {
@@ -9,19 +12,40 @@ class RadioInput extends React.Component<{ label: string }> {
       <div className='form__box'>
         <div className='form__inputs'>
           <div className='form__input-box'>
-            <input type='radio' id='radio1' className='form__radio' name='radio' />
+            <input
+              type='radio'
+              id='radio1'
+              className='form__radio'
+              name='radio'
+              ref={this.props.refProp[0]}
+              value='1'
+            />
             <label htmlFor='radio1' className='form__label'>
               1
             </label>
           </div>
           <div className='form__input-box'>
-            <input type='radio' id='radio2' className='form__radio' name='radio' />
+            <input
+              type='radio'
+              id='radio2'
+              className='form__radio'
+              name='radio'
+              ref={this.props.refProp[1]}
+              value='5'
+            />
             <label htmlFor='radio2' className='form__label'>
               5
             </label>
           </div>
           <div className='form__input-box'>
-            <input type='radio' id='radio3' className='form__radio' name='radio' />
+            <input
+              type='radio'
+              id='radio3'
+              className='form__radio'
+              name='radio'
+              ref={this.props.refProp[2]}
+              value='10'
+            />
             <label htmlFor='radio3' className='form__label'>
               10
             </label>
