@@ -1,4 +1,4 @@
-import React, { createRef } from 'react';
+import React, { ChangeEvent, createRef, FormEvent } from 'react';
 import TextInput from './FormComponents/TextInput';
 import DateInput from './FormComponents/DateInput';
 import SelectInput from './FormComponents/SelectInput';
@@ -51,9 +51,10 @@ class Form extends React.Component<PropsForm> {
         <form
           action='#'
           className='form__page form'
-          onSubmit={() => {
+          onSubmit={(e: FormEvent) => {
             event?.preventDefault();
             const info = this.getInfoFeedBack();
+            (e.target as HTMLFormElement).reset();
             this.props.addFeedBackToState(info);
           }}
         >
