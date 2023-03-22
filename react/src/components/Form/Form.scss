@@ -6,6 +6,7 @@
   flex-direction: column;
   gap: 20px;
   padding: 10px;
+  margin-bottom: 30px;
   &__box{
     display: flex;
     gap: 30px;
@@ -38,6 +39,11 @@
   }
   &__file{
     
+  }
+  &__submit{
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
   }
 }
 .input{

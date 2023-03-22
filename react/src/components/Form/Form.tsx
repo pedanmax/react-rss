@@ -5,9 +5,10 @@ import SelectInput from './FormComponents/SelectInput';
 import CheckBoxInput from './FormComponents/CheckBoxInput';
 import RadioInput from './FormComponents/RadioInput';
 import FileInput from './FormComponents/FileInput';
+import { PropsForm } from 'types/Types';
 import './Form.scss';
 
-class Form extends React.Component<Record<string, never>> {
+class Form extends React.Component<PropsForm> {
   inputName = createRef<HTMLInputElement>();
   movieName = createRef<HTMLInputElement>();
   inputDate = createRef<HTMLInputElement>();
@@ -17,13 +18,13 @@ class Form extends React.Component<Record<string, never>> {
   checkBoxesRefs = Array(3)
     .fill('')
     .map(() => createRef<HTMLInputElement>());
-  constructor(props: Record<string, never>) {
-    super(props);
-  }
   radioBoxesRefs = Array(3)
     .fill('')
     .map(() => createRef<HTMLInputElement>());
-  getInfoFeedBack() {
+  constructor(props: PropsForm) {
+    super(props);
+  }
+  getInfoFeedBack = () => {
     const info = {
       name: this.inputName.current?.value,
       movie: this.movieName.current?.value,
@@ -36,22 +37,22 @@ class Form extends React.Component<Record<string, never>> {
       radioRefs: this.radioBoxesRefs
         .filter((ref) => ref.current?.checked)
         .map((ref) => ref.current?.value)
-        .join(','),
+        .join(', '),
       image: this.inputFile.current?.value,
     };
-    console.log(info);
     return info;
-  }
+  };
+
   render() {
-    console.log(this.radioBoxesRefs);
     return (
       <>
         <form
           action='#'
-          className='form'
+          className='form__page form'
           onSubmit={() => {
             event?.preventDefault();
-            this.getInfoFeedBack();
+            const info = this.getInfoFeedBack();
+            this.props.changeState(info);
           }}
         >
           <TextInput refProp={this.inputName} label='Your name?' />

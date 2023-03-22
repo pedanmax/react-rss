@@ -10,3 +10,18 @@ export type CardType = {
   country: string;
   genre: string;
 };
+
+export type FeedBackCard = {
+  name?: string;
+  movie?: string;
+  date?: string;
+  select?: string;
+  radio?: string;
+  image?: string;
+  checkBoxes?: string;
+  radioBoxes?: string;
+};
+
+export type PropsForm = {
+  changeState: (value: FeedBackCard) => void;
+};

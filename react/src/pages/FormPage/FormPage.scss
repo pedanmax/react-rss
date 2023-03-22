@@ -1,9 +1,13 @@
 .form-page{
-  text-align: center;
-  padding: 20px 0;
-  font-size: 50px;
-  font-weight: 700;
-  &__title{
-    font-size: 50px;
+  padding-bottom: 30px;
+  &__title, &__subtitle{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    padding: 20px 0px;
+  }
+  &__subtitle{
+    padding: 0;
+    margin-bottom: 30px;
   }
 }
