@@ -54,7 +54,7 @@ class Form extends React.Component<PropsForm> {
           onSubmit={() => {
             event?.preventDefault();
             const info = this.getInfoFeedBack();
-            this.props.changeState(info);
+            this.props.addFeedBackToState(info);
           }}
         >
           <TextInput refProp={this.inputName} label='Your name?' />

@@ -18,7 +18,7 @@ class FormPage extends React.Component<object, { feedBacks: FeedBackCard[] }> {
     return (
       <div className='form-page'>
         <h1 className='form-page__title'>Please fill out the form</h1>
-        <Form changeState={this.addFeedBackToState} />
+        <Form addFeedBackToState={this.addFeedBackToState} />
         {this.state.feedBacks.length > 0 && <FeedBackCollection cards={this.state.feedBacks} />}
       </div>
     );

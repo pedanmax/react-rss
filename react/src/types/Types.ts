@@ -23,5 +23,5 @@ export type FeedBackCard = {
 };
 
 export type PropsForm = {
-  changeState: (value: FeedBackCard) => void;
+  addFeedBackToState: (value: FeedBackCard) => void;
 };
