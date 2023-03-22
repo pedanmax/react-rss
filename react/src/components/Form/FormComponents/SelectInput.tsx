@@ -13,19 +13,20 @@ class SelectInput extends React.Component<{
         <select
           className='form__select select input'
           name='select'
-          defaultValue='default'
+          defaultValue='Default'
           ref={this.props.refProp}
+          required
         >
-          <option disabled value='default' className='form__option'>
+          <option disabled value='Default' className='form__option'>
             Choose mood
           </option>
-          <option value='bad' className='form__option'>
+          <option value='Bad' className='form__option'>
             Bad
           </option>
-          <option value='good' className='form__option'>
+          <option value='Good' className='form__option'>
             Good
           </option>
-          <option value='amazing' className='form__option'>
+          <option value='Amazing' className='form__option'>
             Amazing
           </option>
         </select>

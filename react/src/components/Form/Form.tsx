@@ -38,7 +38,9 @@ class Form extends React.Component<PropsForm> {
         .filter((ref) => ref.current?.checked)
         .map((ref) => ref.current?.value)
         .join(', '),
-      image: this.inputFile.current?.value,
+      image: this.inputFile?.current?.files
+        ? URL.createObjectURL(this.inputFile.current.files[0])
+        : '',
     };
     return info;
   };

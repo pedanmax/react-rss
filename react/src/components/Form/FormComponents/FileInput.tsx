@@ -13,9 +13,10 @@ class FileInput extends React.Component<{
         <input
           type='file'
           className='form__file input'
-          name='file'
+          id='file'
           accept='image/*'
           ref={this.props.refProp}
+          required
         />
         <label htmlFor='file' className='form__labe'>
           Upload your photo

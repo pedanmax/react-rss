@@ -10,7 +10,13 @@ class DateInput extends React.Component<{
   render() {
     return (
       <div className='form__box'>
-        <input type='date' className='form__date input' ref={this.props.refProp} name='date' />
+        <input
+          type='date'
+          className='form__date input'
+          ref={this.props.refProp}
+          name='date'
+          required
+        />
         <label htmlFor='date' className='form__label'>
           {this.props.label}
         </label>

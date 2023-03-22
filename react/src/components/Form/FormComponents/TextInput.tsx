@@ -10,7 +10,13 @@ class TextInput extends React.Component<{
   render() {
     return (
       <div className='form__box'>
-        <input type='text' ref={this.props.refProp} className='form__name input' name='name' />
+        <input
+          type='text'
+          ref={this.props.refProp}
+          className='form__name input'
+          name='name'
+          required
+        />
         <label htmlFor='name' className='form__label'>
           {this.props.label}
         </label>

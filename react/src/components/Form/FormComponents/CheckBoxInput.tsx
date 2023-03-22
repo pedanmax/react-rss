@@ -19,6 +19,7 @@ class CheckBoxInput extends React.Component<{
               ref={this.props.refProp[0]}
               value='English'
               id='checkbox1'
+              defaultChecked
             />
             <label htmlFor='checkbox1'>English</label>
           </div>

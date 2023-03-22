@@ -19,6 +19,7 @@ class RadioInput extends React.Component<{
               name='radio'
               ref={this.props.refProp[0]}
               value='1'
+              defaultChecked
             />
             <label htmlFor='radio1' className='form__label'>
               1
