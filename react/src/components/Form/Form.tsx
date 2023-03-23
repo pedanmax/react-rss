@@ -17,6 +17,7 @@ type State = {
     select: boolean;
     checkBoxes: boolean;
     radioBoxes: boolean;
+    image: boolean;
   };
 };
 class Form extends React.Component<PropsForm, State> {
@@ -43,6 +44,7 @@ class Form extends React.Component<PropsForm, State> {
         select: true,
         checkBoxes: true,
         radioBoxes: true,
+        image: true,
       },
     };
   }
@@ -60,9 +62,8 @@ class Form extends React.Component<PropsForm, State> {
         .filter((ref) => ref.current?.checked)
         .map((ref) => ref.current?.value)
         .join(', '),
-      image: this.inputFile?.current?.files
-        ? URL.createObjectURL(this.inputFile.current.files[0])
-        : '',
+      image: this.inputFile?.current?.files ? this.inputFile.current.files[0] : '',
+      // imageName this is extension of loaded file
     };
     return info;
   };
@@ -90,24 +91,30 @@ class Form extends React.Component<PropsForm, State> {
         select: true,
         checkBoxes: true,
         radioBoxes: true,
+        image: true,
       },
     };
+    // const regexpName = /[A-Z][a-z]{2,}\s[A-Z][a-z]{2,}/;
     if (info.name) {
       if (
         info.name?.length < 3 ||
         /[0-9]/.test(info.name) ||
-        info.name.charAt(0) !== info.name.charAt(0).toUpperCase()
+        info.name.charAt(0) !== info.name.charAt(0).toUpperCase() ||
+        info.name[0] == ' ' ||
+        info.name[info.name.length - 1] == ' '
       ) {
         objValidate.fields.name = false;
-      } else {
-        objValidate.fields.name = true;
       }
     } else objValidate.fields.name = false;
     if (info.movie) {
-      if (info.movie?.length < 3 || info.movie.charAt(0) !== info.movie.charAt(0).toUpperCase()) {
+      if (
+        info.movie?.length < 3 ||
+        /[0-9]/.test(info.movie) ||
+        info.movie.charAt(0) !== info.movie.charAt(0).toUpperCase() ||
+        info.movie[0] == ' ' ||
+        info.movie[info.movie.length - 1] == ' '
+      ) {
         objValidate.fields.movie = false;
-      } else {
-        objValidate.fields.movie = true;
       }
     } else objValidate.fields.movie = false;
     if (info.date) {
@@ -116,6 +123,11 @@ class Form extends React.Component<PropsForm, State> {
     if (info.select === 'Default') objValidate.fields.select = false;
     if (!info.checkBoxes) objValidate.fields.checkBoxes = false;
     if (!info.radioBoxes) objValidate.fields.radioBoxes = false;
+    if (!info.image) {
+      objValidate.fields.image = false;
+    } else if (!(info.image as File).type.includes('image')) {
+      objValidate.fields.image = false;
+    }
     this.setState({ ...objValidate });
   };
   drawNewFeedBack = (e: FormEvent, info: FeedBackCard) => {
@@ -158,7 +170,11 @@ class Form extends React.Component<PropsForm, State> {
             label='Rate this movie'
             error={this.state.fields.radioBoxes}
           />
-          <FileInput refProp={this.inputFile} label='Upload your photo' />
+          <FileInput
+            refProp={this.inputFile}
+            label='Upload your photo'
+            error={this.state.fields.image}
+          />
           <input type='submit' className='form__submit' value='Send feedback' />
         </form>
       </>

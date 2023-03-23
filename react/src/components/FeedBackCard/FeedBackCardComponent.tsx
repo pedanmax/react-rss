@@ -1,6 +1,7 @@
 import React from 'react';
 import { FeedBackCard } from 'types/Types';
 import './FeedBackCardComponent.scss';
+import img from '../../assets/demonstration.gif';
 
 const fieldsCard = [
   'My name: ',
@@ -17,10 +18,13 @@ class FeedBackCardComponent extends React.Component<{ obj: FeedBackCard }> {
   }
   render() {
     const arrayOfFeedBacks = Object.values(this.props.obj);
+    const wayToImage = this.props.obj.image
+      ? URL.createObjectURL(this.props.obj.image as Blob | MediaSource)
+      : img;
     return (
       <>
         <div className='collection__feed-back-card feed-back-card'>
-          <img src={this.props.obj.image} alt='title' className='feed-back-card__img' />
+          <img src={wayToImage} alt='title' className='feed-back-card__img' />
           <div className='feed-back-card__info'>
             {fieldsCard.map((field, index) => {
               return (

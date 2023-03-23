@@ -17,7 +17,7 @@ export type FeedBackCard = {
   date?: string;
   select?: string;
   radio?: string;
-  image?: string;
+  image?: string | File;
   checkBoxes?: string;
   radioBoxes?: string;
 };

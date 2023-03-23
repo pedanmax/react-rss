@@ -3,8 +3,13 @@ import React from 'react';
 class FileInput extends React.Component<{
   label: string;
   refProp: React.RefObject<HTMLInputElement>;
+  error: boolean;
 }> {
-  constructor(props: { label: string; refProp: React.RefObject<HTMLInputElement> }) {
+  constructor(props: {
+    label: string;
+    refProp: React.RefObject<HTMLInputElement>;
+    error: boolean;
+  }) {
     super(props);
   }
   render() {
@@ -16,8 +21,8 @@ class FileInput extends React.Component<{
           id='file'
           accept='image/*'
           ref={this.props.refProp}
-          required
         />
+        {!this.props.error && <p className='form__error'>You must select a file of type image</p>}
         <label htmlFor='file' className='form__labe'>
           Upload your photo
         </label>
