@@ -3,8 +3,13 @@ import React from 'react';
 class SelectInput extends React.Component<{
   label: string;
   refProp: React.RefObject<HTMLSelectElement>;
+  error: boolean;
 }> {
-  constructor(props: { label: string; refProp: React.RefObject<HTMLSelectElement> }) {
+  constructor(props: {
+    label: string;
+    refProp: React.RefObject<HTMLSelectElement>;
+    error: boolean;
+  }) {
     super(props);
   }
   render() {
@@ -14,7 +19,6 @@ class SelectInput extends React.Component<{
           className='form__select select input'
           defaultValue='Default'
           ref={this.props.refProp}
-          required
         >
           <option disabled value='Default' hidden className='form__option'>
             Choose mood
@@ -29,6 +33,9 @@ class SelectInput extends React.Component<{
             Amazing
           </option>
         </select>
+        {!this.props.error && (
+          <p className='form__error'>You must select a value other than the default</p>
+        )}
         <label htmlFor='select' className='form__label'>
           {this.props.label}
         </label>

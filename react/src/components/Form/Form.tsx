@@ -14,6 +14,7 @@ type State = {
     name: boolean;
     movie: boolean;
     date: boolean;
+    select: boolean;
   };
 };
 class Form extends React.Component<PropsForm, State> {
@@ -37,6 +38,7 @@ class Form extends React.Component<PropsForm, State> {
         name: true,
         movie: true,
         date: true,
+        select: true,
       },
     };
   }
@@ -63,7 +65,7 @@ class Form extends React.Component<PropsForm, State> {
   validateDate = (str: string | undefined) => {
     const date = new Date();
     if (str?.slice(0, 4)) {
-      if (Number(str?.slice(0, 4)) > date.getFullYear() || Number(str?.slice(8)) < 1970)
+      if (Number(str?.slice(0, 4)) > date.getFullYear() || Number(str?.slice(0, 4)) < 1970)
         return false;
     }
     if (str?.slice(5, 7)) {
@@ -81,6 +83,7 @@ class Form extends React.Component<PropsForm, State> {
         name: true,
         movie: true,
         date: true,
+        select: true,
       },
     };
     if (info.name) {
@@ -93,17 +96,19 @@ class Form extends React.Component<PropsForm, State> {
       } else {
         objValidate.fields.name = true;
       }
-    }
+    } else objValidate.fields.name = false;
     if (info.movie) {
       if (info.movie?.length < 3 || info.movie.charAt(0) !== info.movie.charAt(0).toUpperCase()) {
         objValidate.fields.movie = false;
       } else {
         objValidate.fields.movie = true;
       }
-    }
+    } else objValidate.fields.movie = false;
     if (info.date) {
       objValidate.fields.date = this.validateDate(info.date);
-    }
+    } else objValidate.fields.date = false;
+    if (info.select === 'Default') objValidate.fields.select = false;
+
     this.setState({ ...objValidate });
   };
   drawNewFeedBack = (e: FormEvent, info: FeedBackCard) => {
@@ -118,9 +123,10 @@ class Form extends React.Component<PropsForm, State> {
           className='form__page form'
           onSubmit={(e: FormEvent) => {
             event?.preventDefault();
-            // const info = this.getInfoFeedBack();
-            this.checkValidate(this.getInfoFeedBack());
-            this.drawNewFeedBack(e, this.getInfoFeedBack());
+            const info = this.getInfoFeedBack();
+            this.checkValidate(info);
+            this.drawNewFeedBack(e, info);
+            console.log(info);
           }}
         >
           <TextInput refProp={this.inputName} label='Your name?' error={this.state.fields.name} />
@@ -130,7 +136,11 @@ class Form extends React.Component<PropsForm, State> {
             label='When did you watch this movie?'
             error={this.state.fields.date}
           />
-          <SelectInput refProp={this.inputSelect} label='What is your mood after the movie?' />
+          <SelectInput
+            refProp={this.inputSelect}
+            label='What is your mood after the movie?'
+            error={this.state.fields.select}
+          />
           <CheckBoxInput refProp={this.checkBoxesRefs} label='What subtitles this movie has?' />
           <RadioInput refProp={this.radioBoxesRefs} label='Rate this movie' />
           <FileInput refProp={this.inputFile} label='Upload your photo' />
