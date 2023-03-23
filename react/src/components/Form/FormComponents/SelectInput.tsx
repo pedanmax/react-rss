@@ -12,12 +12,11 @@ class SelectInput extends React.Component<{
       <div className='form__box'>
         <select
           className='form__select select input'
-          name='select'
           defaultValue='Default'
           ref={this.props.refProp}
           required
         >
-          <option disabled value='Default' className='form__option'>
+          <option disabled value='Default' hidden className='form__option'>
             Choose mood
           </option>
           <option value='Bad' className='form__option'>
