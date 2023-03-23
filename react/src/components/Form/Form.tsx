@@ -15,6 +15,7 @@ type State = {
     movie: boolean;
     date: boolean;
     select: boolean;
+    checkBoxes: boolean;
   };
 };
 class Form extends React.Component<PropsForm, State> {
@@ -39,6 +40,7 @@ class Form extends React.Component<PropsForm, State> {
         movie: true,
         date: true,
         select: true,
+        checkBoxes: true,
       },
     };
   }
@@ -84,6 +86,7 @@ class Form extends React.Component<PropsForm, State> {
         movie: true,
         date: true,
         select: true,
+        checkBoxes: true,
       },
     };
     if (info.name) {
@@ -108,7 +111,7 @@ class Form extends React.Component<PropsForm, State> {
       objValidate.fields.date = this.validateDate(info.date);
     } else objValidate.fields.date = false;
     if (info.select === 'Default') objValidate.fields.select = false;
-
+    if (!info.checkBoxes) objValidate.fields.checkBoxes = false;
     this.setState({ ...objValidate });
   };
   drawNewFeedBack = (e: FormEvent, info: FeedBackCard) => {
@@ -141,7 +144,11 @@ class Form extends React.Component<PropsForm, State> {
             label='What is your mood after the movie?'
             error={this.state.fields.select}
           />
-          <CheckBoxInput refProp={this.checkBoxesRefs} label='What subtitles this movie has?' />
+          <CheckBoxInput
+            refProp={this.checkBoxesRefs}
+            label='What subtitles this movie has?'
+            error={this.state.fields.checkBoxes}
+          />
           <RadioInput refProp={this.radioBoxesRefs} label='Rate this movie' />
           <FileInput refProp={this.inputFile} label='Upload your photo' />
           <input type='submit' className='form__submit' value='Send feedback' />

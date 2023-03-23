@@ -3,8 +3,13 @@ import React from 'react';
 class CheckBoxInput extends React.Component<{
   label: string;
   refProp: React.RefObject<HTMLInputElement>[];
+  error: boolean;
 }> {
-  constructor(props: { label: string; refProp: React.RefObject<HTMLInputElement>[] }) {
+  constructor(props: {
+    label: string;
+    refProp: React.RefObject<HTMLInputElement>[];
+    error: boolean;
+  }) {
     super(props);
   }
   render() {
@@ -19,7 +24,6 @@ class CheckBoxInput extends React.Component<{
               ref={this.props.refProp[0]}
               value='English'
               id='checkbox1'
-              defaultChecked
             />
             <label htmlFor='checkbox1'>English</label>
           </div>
@@ -43,6 +47,11 @@ class CheckBoxInput extends React.Component<{
               value='Spanish'
               id='checkbox3'
             />
+            {!this.props.error && (
+              <p className='form__error form__error_checkbox'>
+                You must choose at least one option
+              </p>
+            )}
             <label htmlFor='checkbox3'>Spanish</label>
           </div>
         </div>
