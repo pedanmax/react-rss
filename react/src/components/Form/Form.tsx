@@ -128,10 +128,16 @@ class Form extends React.Component<PropsForm, State> {
     } else if (!(info.image as File).type.includes('image')) {
       objValidate.fields.image = false;
     }
+    const resultOfValidationFields = Object.values(Object.values(objValidate)[1]);
+    const resultOfValidation = resultOfValidationFields.every((field) => field === true);
+    // console.log(resultOfValidationFields);
+    // console.log(resultOfValidation);
+    if (resultOfValidation) objValidate.validate = true;
     this.setState({ ...objValidate });
+    return resultOfValidation;
   };
   drawNewFeedBack = (e: FormEvent, info: FeedBackCard) => {
-    // (e.target as HTMLFormElement).reset();
+    (e.target as HTMLFormElement).reset();
     this.props.addFeedBackToState(info);
   };
   render() {
@@ -143,9 +149,9 @@ class Form extends React.Component<PropsForm, State> {
           onSubmit={(e: FormEvent) => {
             event?.preventDefault();
             const info = this.getInfoFeedBack();
-            this.checkValidate(info);
-            this.drawNewFeedBack(e, info);
-            console.log(info);
+            if (this.checkValidate(info)) {
+              this.drawNewFeedBack(e, info);
+            }
           }}
         >
           <TextInput refProp={this.inputName} label='Your name?' error={this.state.fields.name} />
