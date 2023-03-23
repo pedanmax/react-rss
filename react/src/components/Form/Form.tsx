@@ -16,6 +16,7 @@ type State = {
     date: boolean;
     select: boolean;
     checkBoxes: boolean;
+    radioBoxes: boolean;
   };
 };
 class Form extends React.Component<PropsForm, State> {
@@ -41,6 +42,7 @@ class Form extends React.Component<PropsForm, State> {
         date: true,
         select: true,
         checkBoxes: true,
+        radioBoxes: true,
       },
     };
   }
@@ -54,7 +56,7 @@ class Form extends React.Component<PropsForm, State> {
         .filter((ref) => ref.current?.checked)
         .map((ref) => ref.current?.value)
         .join(', '),
-      radioRefs: this.radioBoxesRefs
+      radioBoxes: this.radioBoxesRefs
         .filter((ref) => ref.current?.checked)
         .map((ref) => ref.current?.value)
         .join(', '),
@@ -87,6 +89,7 @@ class Form extends React.Component<PropsForm, State> {
         date: true,
         select: true,
         checkBoxes: true,
+        radioBoxes: true,
       },
     };
     if (info.name) {
@@ -112,6 +115,7 @@ class Form extends React.Component<PropsForm, State> {
     } else objValidate.fields.date = false;
     if (info.select === 'Default') objValidate.fields.select = false;
     if (!info.checkBoxes) objValidate.fields.checkBoxes = false;
+    if (!info.radioBoxes) objValidate.fields.radioBoxes = false;
     this.setState({ ...objValidate });
   };
   drawNewFeedBack = (e: FormEvent, info: FeedBackCard) => {
@@ -149,7 +153,11 @@ class Form extends React.Component<PropsForm, State> {
             label='What subtitles this movie has?'
             error={this.state.fields.checkBoxes}
           />
-          <RadioInput refProp={this.radioBoxesRefs} label='Rate this movie' />
+          <RadioInput
+            refProp={this.radioBoxesRefs}
+            label='Rate this movie'
+            error={this.state.fields.radioBoxes}
+          />
           <FileInput refProp={this.inputFile} label='Upload your photo' />
           <input type='submit' className='form__submit' value='Send feedback' />
         </form>

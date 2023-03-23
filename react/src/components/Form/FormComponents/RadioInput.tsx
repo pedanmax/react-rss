@@ -3,8 +3,13 @@ import React from 'react';
 class RadioInput extends React.Component<{
   label: string;
   refProp: React.RefObject<HTMLInputElement>[];
+  error: boolean;
 }> {
-  constructor(props: { label: string; refProp: React.RefObject<HTMLInputElement>[] }) {
+  constructor(props: {
+    label: string;
+    refProp: React.RefObject<HTMLInputElement>[];
+    error: boolean;
+  }) {
     super(props);
   }
   render() {
@@ -19,8 +24,10 @@ class RadioInput extends React.Component<{
               name='radio'
               ref={this.props.refProp[0]}
               value='1'
-              defaultChecked
             />
+            {!this.props.error && (
+              <p className='form__error form__error_checkbox'>You must choose one option</p>
+            )}
             <label htmlFor='radio1' className='form__label'>
               1
             </label>
