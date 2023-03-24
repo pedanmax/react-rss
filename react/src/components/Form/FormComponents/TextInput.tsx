@@ -1,16 +1,8 @@
 import React from 'react';
-
-class TextInput extends React.Component<{
-  label: string;
-  refProp: React.RefObject<HTMLInputElement>;
-  error: boolean;
-}> {
+import { InputProps } from 'types/Types';
+class TextInput extends React.Component<InputProps> {
   styleError = { opacity: this.props.error ? '0' : '1' };
-  constructor(props: {
-    label: string;
-    refProp: React.RefObject<HTMLInputElement>;
-    error: boolean;
-  }) {
+  constructor(props: InputProps) {
     super(props);
   }
   render() {
@@ -23,11 +15,6 @@ class TextInput extends React.Component<{
           autoComplete='off'
           style={{ boxShadow: this.props.error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}
         />
-        {/* {!this.props.error && (
-          <p className='form__error'>
-            Name must be over 3 symbols, only letters, first letter is uppercase
-          </p>
-        )} */}
         <div
           className='form__icon'
           style={{

@@ -5,22 +5,10 @@ import SelectInput from './FormComponents/SelectInput';
 import CheckBoxInput from './FormComponents/CheckBoxInput';
 import RadioInput from './FormComponents/RadioInput';
 import FileInput from './FormComponents/FileInput';
-import { FeedBackCard, PropsForm } from 'types/Types';
+import { FeedBackCard, PropsForm, StateForm } from 'types/Types';
 import './Form.scss';
 
-type State = {
-  validate: boolean;
-  fields: {
-    name: boolean;
-    movie: boolean;
-    date: boolean;
-    select: boolean;
-    checkBoxes: boolean;
-    radioBoxes: boolean;
-    image: boolean;
-  };
-};
-class Form extends React.Component<PropsForm, State> {
+class Form extends React.Component<PropsForm, StateForm> {
   inputName = createRef<HTMLInputElement>();
   movieName = createRef<HTMLInputElement>();
   inputDate = createRef<HTMLInputElement>();
@@ -67,7 +55,7 @@ class Form extends React.Component<PropsForm, State> {
     return info;
   };
   checkValidate = (info: FeedBackCard) => {
-    const objValidate: State = {
+    const objValidate: StateForm = {
       validate: false,
       fields: {
         name: true,

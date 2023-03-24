@@ -1,15 +1,7 @@
 import React from 'react';
-
-class CheckBoxInput extends React.Component<{
-  label: string;
-  refProp: React.RefObject<HTMLInputElement>[];
-  error: boolean;
-}> {
-  constructor(props: {
-    label: string;
-    refProp: React.RefObject<HTMLInputElement>[];
-    error: boolean;
-  }) {
+import { RadioInputProps } from 'types/Types';
+class CheckBoxInput extends React.Component<RadioInputProps> {
+  constructor(props: RadioInputProps) {
     super(props);
   }
   render() {

@@ -1,15 +1,8 @@
 import React from 'react';
+import { InputProps } from 'types/Types';
 
-class FileInput extends React.Component<{
-  label: string;
-  refProp: React.RefObject<HTMLInputElement>;
-  error: boolean;
-}> {
-  constructor(props: {
-    label: string;
-    refProp: React.RefObject<HTMLInputElement>;
-    error: boolean;
-  }) {
+class FileInput extends React.Component<InputProps> {
+  constructor(props: InputProps) {
     super(props);
   }
   render() {

@@ -1,15 +1,7 @@
 import React from 'react';
-
-class DateInput extends React.Component<{
-  label: string;
-  refProp: React.RefObject<HTMLInputElement>;
-  error: boolean;
-}> {
-  constructor(props: {
-    label: string;
-    refProp: React.RefObject<HTMLInputElement>;
-    error: boolean;
-  }) {
+import { InputProps } from 'types/Types';
+class DateInput extends React.Component<InputProps> {
+  constructor(props: InputProps) {
     super(props);
   }
   render() {

@@ -1,15 +1,7 @@
 import React from 'react';
-
-class RadioInput extends React.Component<{
-  label: string;
-  refProp: React.RefObject<HTMLInputElement>[];
-  error: boolean;
-}> {
-  constructor(props: {
-    label: string;
-    refProp: React.RefObject<HTMLInputElement>[];
-    error: boolean;
-  }) {
+import { RadioInputProps } from 'types/Types';
+class RadioInput extends React.Component<RadioInputProps> {
+  constructor(props: RadioInputProps) {
     super(props);
   }
   render() {

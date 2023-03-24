@@ -1,15 +1,8 @@
 import React from 'react';
+import { SelectInputProps } from 'types/Types';
 
-class SelectInput extends React.Component<{
-  label: string;
-  refProp: React.RefObject<HTMLSelectElement>;
-  error: boolean;
-}> {
-  constructor(props: {
-    label: string;
-    refProp: React.RefObject<HTMLSelectElement>;
-    error: boolean;
-  }) {
+class SelectInput extends React.Component<SelectInputProps> {
+  constructor(props: SelectInputProps) {
     super(props);
   }
   render() {
