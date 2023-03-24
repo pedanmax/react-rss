@@ -37,7 +37,15 @@ class SelectInput extends React.Component<{
         {!this.props.error && (
           <p className='form__error'>You must select a value other than the default</p>
         )}
-        <div className='form__icon' style={{ opacity: this.props.error ? '0' : '1' }}></div>
+        <div
+          className='form__icon'
+          style={{
+            opacity: this.props.error ? '0' : '1',
+            cursor: this.props.error ? 'default' : 'pointer',
+          }}
+        >
+          <div className='form__error'>You must select a value other than the default</div>
+        </div>
         <label htmlFor='select' className='form__label'>
           {this.props.label}
         </label>

@@ -22,8 +22,15 @@ class FileInput extends React.Component<{
           ref={this.props.refProp}
           style={{ boxShadow: this.props.error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}
         />
-        {!this.props.error && <p className='form__error'>You must select a file of type image</p>}
-        <div className='form__icon' style={{ opacity: this.props.error ? '0' : '1' }}></div>
+        <div
+          className='form__icon'
+          style={{
+            opacity: this.props.error ? '0' : '1',
+            cursor: this.props.error ? 'default' : 'pointer',
+          }}
+        >
+          <div className='form__error'>You must select a file of type image</div>
+        </div>
         <label htmlFor='file' className='form__label'>
           Upload your photo
         </label>

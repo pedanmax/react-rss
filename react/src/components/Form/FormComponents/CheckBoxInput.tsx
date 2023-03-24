@@ -58,7 +58,15 @@ class CheckBoxInput extends React.Component<{
             <label htmlFor='checkbox3'>Spanish</label>
           </div>
         </div>
-        <div className='form__icon' style={{ opacity: this.props.error ? '0' : '1' }}></div>
+        <div
+          className='form__icon'
+          style={{
+            opacity: this.props.error ? '0' : '1',
+            cursor: this.props.error ? 'default' : 'pointer',
+          }}
+        >
+          <div className='form__error'>You must select at least one option</div>
+        </div>
         <h5 className='form__label'>{this.props.label}</h5>
       </div>
     );

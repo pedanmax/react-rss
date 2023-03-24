@@ -21,12 +21,15 @@ class DateInput extends React.Component<{
           ref={this.props.refProp}
           style={{ boxShadow: this.props.error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}
         />
-
-        <div className='form__icon' style={{ opacity: this.props.error ? '0' : '1' }}></div>
-        {/* {!this.props.error && (
-          <p className='form__error'>This date has not yet come or not valid</p>
-        )} */}
-        {/* <div className='form__error'>This date has not yet come or not valid</div> */}
+        <div
+          className='form__icon'
+          style={{
+            opacity: this.props.error ? '0' : '1',
+            cursor: this.props.error ? 'default' : 'pointer',
+          }}
+        >
+          <div className='form__error'>This date has not yet come or not valid</div>
+        </div>
         <label htmlFor='date' className='form__label'>
           {this.props.label}
         </label>

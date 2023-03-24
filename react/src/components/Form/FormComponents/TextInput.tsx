@@ -28,7 +28,13 @@ class TextInput extends React.Component<{
             Name must be over 3 symbols, only letters, first letter is uppercase
           </p>
         )} */}
-        <div className='form__icon' style={{ opacity: this.props.error ? '0' : '1' }}>
+        <div
+          className='form__icon'
+          style={{
+            opacity: this.props.error ? '0' : '1',
+            cursor: this.props.error ? 'default' : 'pointer',
+          }}
+        >
           <div className='form__error'>
             Name must be over 3 symbols, only letters, first letter is uppercase
           </div>
