@@ -15,7 +15,10 @@ class CheckBoxInput extends React.Component<{
   render() {
     return (
       <div className='form__box'>
-        <div className='form__inputs'>
+        <div
+          className='form__inputs'
+          style={{ boxShadow: this.props.error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}
+        >
           <div className='form__input-box'>
             <input
               type='checkbox'
@@ -55,6 +58,7 @@ class CheckBoxInput extends React.Component<{
             <label htmlFor='checkbox3'>Spanish</label>
           </div>
         </div>
+        <div className='form__icon' style={{ opacity: this.props.error ? '0' : '1' }}></div>
         <h5 className='form__label'>{this.props.label}</h5>
       </div>
     );

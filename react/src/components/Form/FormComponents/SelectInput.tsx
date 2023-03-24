@@ -19,6 +19,7 @@ class SelectInput extends React.Component<{
           className='form__select select input'
           defaultValue='Default'
           ref={this.props.refProp}
+          style={{ boxShadow: this.props.error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}
         >
           <option disabled value='Default' hidden className='form__option'>
             Choose mood
@@ -36,6 +37,7 @@ class SelectInput extends React.Component<{
         {!this.props.error && (
           <p className='form__error'>You must select a value other than the default</p>
         )}
+        <div className='form__icon' style={{ opacity: this.props.error ? '0' : '1' }}></div>
         <label htmlFor='select' className='form__label'>
           {this.props.label}
         </label>

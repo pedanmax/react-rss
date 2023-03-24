@@ -15,7 +15,10 @@ class RadioInput extends React.Component<{
   render() {
     return (
       <div className='form__box'>
-        <div className='form__inputs'>
+        <div
+          className='form__inputs'
+          style={{ boxShadow: this.props.error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}
+        >
           <div className='form__input-box'>
             <input
               type='radio'
@@ -28,7 +31,7 @@ class RadioInput extends React.Component<{
             {!this.props.error && (
               <p className='form__error form__error_checkbox'>You must choose one option</p>
             )}
-            <label htmlFor='radio1' className='form__label'>
+            <label htmlFor='radio1' className='form__label_radio'>
               1
             </label>
           </div>
@@ -41,7 +44,7 @@ class RadioInput extends React.Component<{
               ref={this.props.refProp[1]}
               value='5'
             />
-            <label htmlFor='radio2' className='form__label'>
+            <label htmlFor='radio2' className='form__label_radio'>
               5
             </label>
           </div>
@@ -54,11 +57,12 @@ class RadioInput extends React.Component<{
               ref={this.props.refProp[2]}
               value='10'
             />
-            <label htmlFor='radio3' className='form__label'>
+            <label htmlFor='radio3' className='form__label_radio'>
               10
             </label>
           </div>
         </div>
+        <div className='form__icon' style={{ opacity: this.props.error ? '0' : '1' }}></div>
         <h5 className='form__label'>{this.props.label}</h5>
       </div>
     );
