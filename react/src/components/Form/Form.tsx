@@ -1,4 +1,4 @@
-import React, { ChangeEvent, createRef, FormEvent } from 'react';
+import React, { createRef, FormEvent } from 'react';
 import TextInput from './FormComponents/TextInput';
 import DateInput from './FormComponents/DateInput';
 import SelectInput from './FormComponents/SelectInput';
@@ -52,7 +52,7 @@ class Form extends React.Component<PropsForm, State> {
     const info = {
       name: this.inputName.current?.value,
       movie: this.movieName.current?.value,
-      date: this.inputDate.current?.value.split('-').join('.'),
+      date: this.inputDate.current?.value,
       select: this.inputSelect.current?.value,
       checkBoxes: this.checkBoxesRefs
         .filter((ref) => ref.current?.checked)
@@ -63,23 +63,8 @@ class Form extends React.Component<PropsForm, State> {
         .map((ref) => ref.current?.value)
         .join(', '),
       image: this.inputFile?.current?.files ? this.inputFile.current.files[0] : '',
-      // imageName this is extension of loaded file
     };
     return info;
-  };
-  validateDate = (str: string | undefined) => {
-    const date = new Date();
-    if (str?.slice(0, 4)) {
-      if (Number(str?.slice(0, 4)) > date.getFullYear() || Number(str?.slice(0, 4)) < 1970)
-        return false;
-    }
-    if (str?.slice(5, 7)) {
-      if (Number(str?.slice(5, 7)) > date.getMonth() + 1) return false;
-    }
-    if (str?.slice(8)) {
-      if (Number(str?.slice(8)) > date.getDate()) return false;
-    }
-    return true;
   };
   checkValidate = (info: FeedBackCard) => {
     const objValidate: State = {
@@ -94,7 +79,6 @@ class Form extends React.Component<PropsForm, State> {
         image: true,
       },
     };
-    // const regexpName = /[A-Z][a-z]{2,}\s[A-Z][a-z]{2,}/;
     if (info.name) {
       if (
         info.name?.length < 3 ||
@@ -109,7 +93,6 @@ class Form extends React.Component<PropsForm, State> {
     if (info.movie) {
       if (
         info.movie?.length < 3 ||
-        /[0-9]/.test(info.movie) ||
         info.movie.charAt(0) !== info.movie.charAt(0).toUpperCase() ||
         info.movie[0] == ' ' ||
         info.movie[info.movie.length - 1] == ' '
@@ -118,7 +101,8 @@ class Form extends React.Component<PropsForm, State> {
       }
     } else objValidate.fields.movie = false;
     if (info.date) {
-      objValidate.fields.date = this.validateDate(info.date);
+      objValidate.fields.date =
+        Date.parse(info.date) > Date.parse(new Date().toISOString().split('T')[0]) ? false : true;
     } else objValidate.fields.date = false;
     if (info.select === 'Default') objValidate.fields.select = false;
     if (!info.checkBoxes) objValidate.fields.checkBoxes = false;
@@ -130,8 +114,6 @@ class Form extends React.Component<PropsForm, State> {
     }
     const resultOfValidationFields = Object.values(Object.values(objValidate)[1]);
     const resultOfValidation = resultOfValidationFields.every((field) => field === true);
-    // console.log(resultOfValidationFields);
-    // console.log(resultOfValidation);
     if (resultOfValidation) objValidate.validate = true;
     this.setState({ ...objValidate });
     return resultOfValidation;
@@ -144,6 +126,7 @@ class Form extends React.Component<PropsForm, State> {
     return (
       <>
         <form
+          noValidate
           action='#'
           className='form__page form'
           onSubmit={(e: FormEvent) => {
