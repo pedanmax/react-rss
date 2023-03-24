@@ -15,7 +15,7 @@ class TextInput extends React.Component<{
   render() {
     return (
       <div className='form__box'>
-        <input type='text' ref={this.props.refProp} className='form__name input' name='name' />
+        <input type='text' ref={this.props.refProp} className='form__name input' />
         {!this.props.error && (
           <p className='form__error'>
             Name must be over 3 symbols, only letters, first letter is uppercase

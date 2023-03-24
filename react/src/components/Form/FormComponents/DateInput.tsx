@@ -15,7 +15,7 @@ class DateInput extends React.Component<{
   render() {
     return (
       <div className='form__box'>
-        <input type='date' className='form__date input' ref={this.props.refProp} id='date' />
+        <input type='date' className='form__date input' ref={this.props.refProp} />
         {!this.props.error && (
           <p className='form__error'>This date has not yet come or not valid</p>
         )}

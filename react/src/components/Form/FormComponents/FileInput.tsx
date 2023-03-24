@@ -15,15 +15,9 @@ class FileInput extends React.Component<{
   render() {
     return (
       <div className='form__box'>
-        <input
-          type='file'
-          className='form__file input'
-          id='file'
-          accept='image/*'
-          ref={this.props.refProp}
-        />
+        <input type='file' className='form__file input' accept='image/*' ref={this.props.refProp} />
         {!this.props.error && <p className='form__error'>You must select a file of type image</p>}
-        <label htmlFor='file' className='form__labe'>
+        <label htmlFor='file' className='form__label'>
           Upload your photo
         </label>
       </div>
