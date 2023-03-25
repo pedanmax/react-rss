@@ -115,6 +115,7 @@ class Form extends React.Component<PropsForm, StateForm> {
       <>
         <form
           noValidate
+          name='form'
           action='#'
           className='form-page__form form'
           onSubmit={(e: FormEvent) => {
