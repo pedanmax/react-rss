@@ -1,0 +1,22 @@
+.popap{
+  transition: all 0.7s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #00000081;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__text{
+    font-size: 26px;
+    text-align: center;
+    background-color: #fff;
+    width: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5490196078);
+  } 
+}

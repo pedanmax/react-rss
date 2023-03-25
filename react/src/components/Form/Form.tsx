@@ -116,7 +116,7 @@ class Form extends React.Component<PropsForm, StateForm> {
         <form
           noValidate
           action='#'
-          className='form__page form'
+          className='form-page__form form'
           onSubmit={(e: FormEvent) => {
             event?.preventDefault();
             const info = this.getInfoFeedBack();
