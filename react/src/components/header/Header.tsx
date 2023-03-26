@@ -19,6 +19,8 @@ class Header extends React.Component<Record<string, never>, { currentPage: strin
               ? ' Home'
               : window.location.pathname.slice(1) === 'about'
               ? ' About'
+              : window.location.pathname.slice(1) === 'form'
+              ? ' Form'
               : ' Not found'}
           </h2>
           <nav className='header__navigation'>
@@ -39,6 +41,15 @@ class Header extends React.Component<Record<string, never>, { currentPage: strin
               }}
             >
               About
+            </NavLink>
+            <NavLink
+              to='/form'
+              className='header__item'
+              onClick={() => {
+                this.setState({ currentPage: window.location.pathname.slice(1) });
+              }}
+            >
+              Form
             </NavLink>
           </nav>
         </div>
