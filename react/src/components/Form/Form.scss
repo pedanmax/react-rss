@@ -1,4 +1,4 @@
-.form{
+.form {
   background-color: #fff;
   max-width: 800px;
   margin: 0 auto;
@@ -11,17 +11,17 @@
   border-radius: 10px;
   box-shadow: 0 0 10px 10px #0000008c;
   transition: all 0.3s ease;
-  &:hover{
+  &:hover {
     box-shadow: 0 0 22px 10px #0000008c;
   }
-  &__box{
+  &__box {
     display: flex;
     gap: 30px;
     justify-content: flex-start;
     align-items: center;
     position: relative;
   }
-  &__inputs{
+  &__inputs {
     flex: 0 1 45%;
     display: flex;
     justify-content: space-evenly;
@@ -30,12 +30,13 @@
     border-radius: 10px;
     padding: 5px;
     transition: all 0.3s ease;
-    &:focus, &:hover{
+    &:focus,
+    &:hover {
       box-shadow: 0 0 10px 5px #0000008c;
       outline: none;
     }
   }
-  &__input-box{
+  &__input-box {
     font-size: 14px;
     text-align: center;
     display: flex;
@@ -43,7 +44,7 @@
     gap: 5px;
     justify-content: center;
   }
-  &__icon{
+  &__icon {
     width: 30px;
     height: 30px;
     background-color: red;
@@ -53,42 +54,26 @@
     position: relative;
     transition: all 0.3s ease;
     flex-shrink: 0;
-    &:before{
+    &:before {
       content: '!';
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
-      
+      transform: translate(-50%, -50%);
     }
-    &:hover{
+    &:hover {
       box-shadow: 0 0 5px 2px red;
     }
   }
-  &__name{
-
-  }
-  &__label{
+  &__label {
     font-weight: 700;
     font-size: 18px;
     flex: 1 1 330px;
-    &_radio{
+    &_radio {
       font-weight: 400;
     }
   }
-  &__checkbox{
-    
-  }
-  &__radio{
-
-  }
-  &__file{
-    
-  }
-  &__select{
-
-  }
-  &__submit{
+  &__submit {
     font-weight: 700;
     font-size: 20px;
     cursor: pointer;
@@ -96,11 +81,11 @@
     border-radius: 10px;
     padding: 12px;
     transition: all 0.3s ease;
-    &:hover{
+    &:hover {
       background-color: #afaeae;
     }
   }
-  &__error{
+  &__error {
     position: absolute;
     color: #000;
     font-size: 14px;
@@ -115,12 +100,12 @@
     transition: all 0.5s ease;
     display: none;
     cursor: default;
-    &_checkbox{
+    &_checkbox {
       top: 50px;
       left: 0;
     }
-    &::before{
-      content: "";
+    &::before {
+      content: '';
       position: absolute;
       bottom: -18%;
       left: 20px;
@@ -131,8 +116,8 @@
       border-top: 10px solid #c4c4c4;
       z-index: 1;
     }
-    &::after{
-      content: "";
+    &::after {
+      content: '';
       position: absolute;
       bottom: -12px;
       left: 18px;
@@ -145,7 +130,7 @@
     }
   }
 }
-.input{
+.input {
   display: block;
   flex: 0 1 45%;
   background-color: #c4c4c4;
@@ -155,12 +140,13 @@
   transition: all 0.3s ease;
   font-size: 16px;
   min-width: 200px;
-  &:focus, &:hover{
+  &:focus,
+  &:hover {
     box-shadow: 0 0 10px 5px #0000008c;
     outline: none;
   }
 }
 
-.form__icon:hover > .form__error{
+.form__icon:hover > .form__error {
   display: block;
 }

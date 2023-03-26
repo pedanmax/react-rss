@@ -1,4 +1,4 @@
-.popap{
+.popap {
   transition: all 0.7s ease;
   position: fixed;
   top: 0;
@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  &__text{
+  &__text {
     font-size: 26px;
     text-align: center;
     background-color: #fff;
@@ -18,5 +18,5 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5490196078);
-  } 
+  }
 }

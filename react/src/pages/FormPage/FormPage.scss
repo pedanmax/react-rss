@@ -1,12 +1,13 @@
-.form-page{
+.form-page {
   padding: 0px 15px 30px;
-  &__title, &__subtitle{
+  &__title,
+  &__subtitle {
     font-size: 30px;
     font-weight: 700;
     text-align: center;
     padding: 25px 0px;
   }
-  &__subtitle{
+  &__subtitle {
     padding: 0;
     margin-bottom: 30px;
   }
