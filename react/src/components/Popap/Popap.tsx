@@ -9,7 +9,7 @@ class Popap extends React.Component<{ refProp: React.RefObject<HTMLDivElement> }
         ref={this.props.refProp}
         style={{ opacity: '0', zIndex: '-1' }}
       >
-        <p className='popap__text'>Thank for your feedback</p>
+        <h4 className='popap__text'>Thank for your feedback</h4>
       </div>
     );
   }

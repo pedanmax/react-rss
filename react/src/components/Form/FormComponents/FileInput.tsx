@@ -10,6 +10,7 @@ class FileInput extends React.Component<InputProps> {
       <div className='form__box'>
         <input
           type='file'
+          data-testid='file'
           className='form__file input'
           accept='image/*'
           ref={this.props.refProp}

@@ -11,6 +11,7 @@ class DateInput extends React.Component<InputProps> {
           type='date'
           className='form__date input'
           ref={this.props.refProp}
+          data-testid='date'
           style={{ boxShadow: this.props.error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}
         />
         <div

@@ -10,6 +10,7 @@ class SelectInput extends React.Component<SelectInputProps> {
       <div className='form__box'>
         <select
           className='form__select select input'
+          data-testid='select'
           defaultValue='Default'
           ref={this.props.refProp}
           style={{ boxShadow: this.props.error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}

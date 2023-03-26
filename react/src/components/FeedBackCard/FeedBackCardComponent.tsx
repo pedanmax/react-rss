@@ -18,13 +18,15 @@ class FeedBackCardComponent extends React.Component<{ obj: FeedBackCard }> {
   }
   render() {
     const arrayOfFeedBacks = Object.values(this.props.obj);
+    console.log(arrayOfFeedBacks);
+    console.log(this.props.obj.image);
     const wayToImage = this.props.obj.image
       ? URL.createObjectURL(this.props.obj.image as Blob | MediaSource)
       : img;
     return (
       <>
-        <div className='collection__feed-back-card feed-back-card'>
-          <img src={wayToImage} alt='title' className='feed-back-card__img' />
+        <div className='collection__feed-back-card feed-back-card' data-testid='feedback-card'>
+          <img src={wayToImage} alt='photo' className='feed-back-card__img' />
           <div className='feed-back-card__info'>
             {fieldsCard.map((field, index) => {
               return (
