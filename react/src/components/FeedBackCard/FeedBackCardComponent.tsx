@@ -18,8 +18,6 @@ class FeedBackCardComponent extends React.Component<{ obj: FeedBackCard }> {
   }
   render() {
     const arrayOfFeedBacks = Object.values(this.props.obj);
-    console.log(arrayOfFeedBacks);
-    console.log(this.props.obj.image);
     const wayToImage = this.props.obj.image
       ? URL.createObjectURL(this.props.obj.image as Blob | MediaSource)
       : img;

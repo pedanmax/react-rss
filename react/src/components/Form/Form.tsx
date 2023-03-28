@@ -36,7 +36,7 @@ class Form extends React.Component<PropsForm, StateForm> {
       },
     };
   }
-  getInfoFeedBack = () => {
+  getInfoFeedBack = (): FeedBackCard => {
     const info = {
       name: this.inputName.current?.value,
       movie: this.movieName.current?.value,
@@ -52,6 +52,7 @@ class Form extends React.Component<PropsForm, StateForm> {
         .join(', '),
       image: this.inputFile?.current?.files ? this.inputFile.current.files[0] : '',
     };
+    console.log(info);
     return info;
   };
   checkValidate = (info: FeedBackCard) => {
