@@ -52,7 +52,6 @@ class Form extends React.Component<PropsForm, StateForm> {
         .join(', '),
       image: this.inputFile?.current?.files ? this.inputFile.current.files[0] : '',
     };
-    console.log(info);
     return info;
   };
   checkValidate = (info: FeedBackCard) => {
