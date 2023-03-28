@@ -7,9 +7,7 @@ const Home = () => {
   return (
     <div className='home'>
       <div className='home__container'>
-        <div className='home__search'>
-          <Search />
-        </div>
+        <Search />
         <CardList />
       </div>
     </div>
