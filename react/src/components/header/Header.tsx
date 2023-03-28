@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './Header.scss';
 
 const Header = () => {
-  const [title, setTitle] = useState('Home');
+  const [title, setTitle] = useState(' Home');
   return (
     <header className='header'>
       <div className='header__container'>
