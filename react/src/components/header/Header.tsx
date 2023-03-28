@@ -12,13 +12,13 @@ const Header = () => {
           {title}
         </h2>
         <nav className='header__navigation'>
-          <NavLink to='/' className='header__item' onClick={() => setTitle('Home')}>
+          <NavLink to='/' className='header__item' onClick={() => setTitle(' Home')}>
             Home
           </NavLink>
-          <NavLink to='/about' className='header__item' onClick={() => setTitle('About')}>
+          <NavLink to='/about' className='header__item' onClick={() => setTitle(' About')}>
             About
           </NavLink>
-          <NavLink to='/form' className='header__item' onClick={() => setTitle('Form')}>
+          <NavLink to='/form' className='header__item' onClick={() => setTitle(' Form')}>
             Form
           </NavLink>
         </nav>
