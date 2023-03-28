@@ -112,50 +112,48 @@ class Form extends React.Component<PropsForm, StateForm> {
   };
   render() {
     return (
-      <>
-        <form
-          noValidate
-          name='form'
-          action='#'
-          className='form-page__form form'
-          onSubmit={(e: FormEvent) => {
-            event?.preventDefault();
-            const info = this.getInfoFeedBack();
-            if (this.checkValidate(info)) {
-              this.drawNewFeedBack(e, info);
-            }
-          }}
-        >
-          <TextInput refProp={this.inputName} label='Your name?' error={this.state.fields.name} />
-          <TextInput refProp={this.movieName} label='Movie name?' error={this.state.fields.movie} />
-          <DateInput
-            refProp={this.inputDate}
-            label='When did you watch this movie?'
-            error={this.state.fields.date}
-          />
-          <SelectInput
-            refProp={this.inputSelect}
-            label='What is your mood after the movie?'
-            error={this.state.fields.select}
-          />
-          <CheckBoxInput
-            refProp={this.checkBoxesRefs}
-            label='What subtitles this movie has?'
-            error={this.state.fields.checkBoxes}
-          />
-          <RadioInput
-            refProp={this.radioBoxesRefs}
-            label='Rate this movie'
-            error={this.state.fields.radioBoxes}
-          />
-          <FileInput
-            refProp={this.inputFile}
-            label='Upload your photo'
-            error={this.state.fields.image}
-          />
-          <input type='submit' className='form__submit' value='Send feedback' />
-        </form>
-      </>
+      <form
+        noValidate
+        name='form'
+        action='#'
+        className='form-page__form form'
+        onSubmit={(e: FormEvent) => {
+          event?.preventDefault();
+          const info = this.getInfoFeedBack();
+          if (this.checkValidate(info)) {
+            this.drawNewFeedBack(e, info);
+          }
+        }}
+      >
+        <TextInput refProp={this.inputName} label='Your name?' error={this.state.fields.name} />
+        <TextInput refProp={this.movieName} label='Movie name?' error={this.state.fields.movie} />
+        <DateInput
+          refProp={this.inputDate}
+          label='When did you watch this movie?'
+          error={this.state.fields.date}
+        />
+        <SelectInput
+          refProp={this.inputSelect}
+          label='What is your mood after the movie?'
+          error={this.state.fields.select}
+        />
+        <CheckBoxInput
+          refProp={this.checkBoxesRefs}
+          label='What subtitles this movie has?'
+          error={this.state.fields.checkBoxes}
+        />
+        <RadioInput
+          refProp={this.radioBoxesRefs}
+          label='Rate this movie'
+          error={this.state.fields.radioBoxes}
+        />
+        <FileInput
+          refProp={this.inputFile}
+          label='Upload your photo'
+          error={this.state.fields.image}
+        />
+        <input type='submit' className='form__submit' value='Send feedback' />
+      </form>
     );
   }
 }
