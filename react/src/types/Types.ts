@@ -17,9 +17,21 @@ export type FeedBackCard = {
   date?: string;
   select?: string;
   radio?: string;
-  image?: string | File;
-  checkBoxes?: string;
+  image?: string | FileList;
+  checkBoxes?: string | string[];
   radioBoxes?: string;
+};
+
+export type FeedBackCardFromHook = {
+  checkBoxEn?: string | boolean;
+  checkBoxUa?: string | boolean;
+  checkBoxSp?: string | undefined;
+  date?: string;
+  image?: FileList | string;
+  movie?: string;
+  name?: string;
+  radio?: string;
+  select?: string;
 };
 
 export type PropsForm = {

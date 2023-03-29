@@ -1,7 +1,16 @@
 import React from 'react';
+import { UseFormRegister, FieldValues } from 'react-hook-form';
 import { RadioInputProps } from 'types/Types';
 
-const CheckBoxInput = ({ error, label, refProp }: RadioInputProps) => {
+const CheckBoxInput = ({
+  error,
+  label,
+  refProp,
+}: {
+  label: string;
+  refProp: UseFormRegister<FieldValues>;
+  error: boolean;
+}) => {
   return (
     <div className='form__box'>
       <div
@@ -11,9 +20,8 @@ const CheckBoxInput = ({ error, label, refProp }: RadioInputProps) => {
         <div className='form__input-box'>
           <input
             type='checkbox'
-            name='checkbox'
             className='form__checkbox'
-            ref={refProp[0]}
+            {...refProp('checkBoxEn')}
             value='English'
             id='checkbox1'
           />
@@ -22,9 +30,8 @@ const CheckBoxInput = ({ error, label, refProp }: RadioInputProps) => {
         <div className='form__input-box'>
           <input
             type='checkbox'
-            name='checkbox'
             className='form__checkbox'
-            ref={refProp[1]}
+            {...refProp('checkBoxUa')}
             value='Ukrainian'
             id='checkbox2'
           />
@@ -33,9 +40,8 @@ const CheckBoxInput = ({ error, label, refProp }: RadioInputProps) => {
         <div className='form__input-box'>
           <input
             type='checkbox'
-            name='checkbox'
             className='form__checkbox'
-            ref={refProp[2]}
+            {...refProp('checkBoxSp')}
             value='Spanish'
             id='checkbox3'
           />

@@ -3,13 +3,15 @@ import { render, screen } from '@testing-library/react';
 import FeedBackCardComponent from '../components/FeedBackCard/FeedBackCardComponent';
 
 const testObj = {
-  name: 'Maks',
-  movie: 'Avatar',
+  checkBoxEn: 'EN',
+  checkBoxUa: 'UA',
+  checkBoxSp: 'SP',
   date: '22-03-2022',
-  select: 'amazing',
-  checkBoxes: 'U',
-  radioBoxes: '10',
   image: '',
+  movie: 'Avatar',
+  name: 'Maks',
+  radio: '10',
+  select: 'amazing',
 };
 
 beforeEach(() => {

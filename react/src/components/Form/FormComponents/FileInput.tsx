@@ -1,7 +1,16 @@
 import React from 'react';
+import { UseFormRegister, FieldValues } from 'react-hook-form';
 import { InputProps } from 'types/Types';
 
-const FileInput = ({ error, label, refProp }: InputProps) => {
+const FileInput = ({
+  error,
+  label,
+  refProp,
+}: {
+  label: string;
+  refProp: UseFormRegister<FieldValues>;
+  error: boolean;
+}) => {
   return (
     <div className='form__box'>
       <input
@@ -9,7 +18,7 @@ const FileInput = ({ error, label, refProp }: InputProps) => {
         data-testid='file'
         className='form__file input'
         accept='image/*'
-        ref={refProp}
+        {...refProp('image')}
         style={{ boxShadow: error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}
       />
       <div

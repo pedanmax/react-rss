@@ -1,6 +1,15 @@
 import React from 'react';
+import { UseFormRegister, FieldValues } from 'react-hook-form';
 import { RadioInputProps } from 'types/Types';
-const RadioInput = ({ error, label, refProp }: RadioInputProps) => {
+const RadioInput = ({
+  error,
+  label,
+  refProp,
+}: {
+  label: string;
+  refProp: UseFormRegister<FieldValues>;
+  error: boolean;
+}) => {
   return (
     <div className='form__box'>
       <div
@@ -8,28 +17,14 @@ const RadioInput = ({ error, label, refProp }: RadioInputProps) => {
         style={{ boxShadow: error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}
       >
         <div className='form__input-box'>
-          <input
-            type='radio'
-            id='radio1'
-            className='form__radio'
-            name='radio'
-            ref={refProp[0]}
-            value='1'
-          />
+          <input type='radio' id='radio1' className='form__radio' {...refProp('radio')} value='1' />
           {!error && <p className='form__error form__error_checkbox'>You must choose one option</p>}
           <label htmlFor='radio1' className='form__label_radio'>
             1
           </label>
         </div>
         <div className='form__input-box'>
-          <input
-            type='radio'
-            id='radio2'
-            className='form__radio'
-            name='radio'
-            ref={refProp[1]}
-            value='5'
-          />
+          <input type='radio' id='radio2' className='form__radio' {...refProp('radio')} value='5' />
           <label htmlFor='radio2' className='form__label_radio'>
             5
           </label>
@@ -39,8 +34,7 @@ const RadioInput = ({ error, label, refProp }: RadioInputProps) => {
             type='radio'
             id='radio3'
             className='form__radio'
-            name='radio'
-            ref={refProp[2]}
+            {...refProp('radio')}
             value='10'
           />
           <label htmlFor='radio3' className='form__label_radio'>

@@ -1,14 +1,23 @@
 import React from 'react';
+import { UseFormRegister, FieldValues } from 'react-hook-form';
 import { SelectInputProps } from 'types/Types';
 
-const SelectInput = ({ error, label, refProp }: SelectInputProps) => {
+const SelectInput = ({
+  error,
+  label,
+  refProp,
+}: {
+  label: string;
+  refProp: UseFormRegister<FieldValues>;
+  error: boolean;
+}) => {
   return (
     <div className='form__box'>
       <select
         className='form__select select input'
         data-testid='select'
         defaultValue='Default'
-        ref={refProp}
+        {...refProp('select')}
         style={{ boxShadow: error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}
       >
         <option disabled value='Default' hidden className='form__option'>
