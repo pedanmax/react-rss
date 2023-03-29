@@ -1,17 +1,7 @@
 import React from 'react';
-import { UseFormRegister, FieldValues } from 'react-hook-form';
-import { RadioInputProps } from 'types/Types';
-const RadioInput = ({
-  error,
-  label,
-  refProp,
-  name,
-}: {
-  label: string;
-  refProp: UseFormRegister<FieldValues>;
-  error?: string;
-  name: string;
-}) => {
+import { InputProps } from 'types/Types';
+
+const RadioInput = ({ error, label, refProp, name }: InputProps) => {
   return (
     <div className='form__box'>
       <div

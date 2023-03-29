@@ -1,4 +1,4 @@
-import React, { createRef, FormEvent, FormEventHandler, useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import TextInput from './FormComponents/TextInput';
 import DateInput from './FormComponents/DateInput';
@@ -6,7 +6,7 @@ import SelectInput from './FormComponents/SelectInput';
 import CheckBoxInput from './FormComponents/CheckBoxInput';
 import RadioInput from './FormComponents/RadioInput';
 import FileInput from './FormComponents/FileInput';
-import { FeedBackCard, PropsForm, StateForm, FeedBackCardFromHook } from 'types/Types';
+import { FeedBackCard, PropsForm, FeedBackCardFromHook } from 'types/Types';
 import './Form.scss';
 
 const Form = ({ addFeedBackToState }: PropsForm) => {
@@ -32,7 +32,7 @@ const Form = ({ addFeedBackToState }: PropsForm) => {
   };
 
   return (
-    <form className='form-page__form form' onSubmit={handleSubmit(onSubmit)}>
+    <form className='form-page__form form' name='form' onSubmit={handleSubmit(onSubmit)}>
       <TextInput
         refProp={register}
         name='name'

@@ -2,7 +2,7 @@ import React, { createRef, useState } from 'react';
 import Form from '../../components/Form/Form';
 import FeedBackCollection from '../../components/FeedBackCollection/FeedBackCollection';
 import Popap from '../../components/Popap/Popap';
-import { FeedBackCard, FeedBackCardFromHook } from 'types/Types';
+import { FeedBackCard } from 'types/Types';
 import './FormPage.scss';
 
 const FormPage = () => {

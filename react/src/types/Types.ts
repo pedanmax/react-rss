@@ -1,3 +1,5 @@
+import { UseFormRegister, FieldValues } from 'react-hook-form';
+
 export type StateInput = {
   value: string;
 };
@@ -50,9 +52,17 @@ export type StateForm = {
 };
 
 export type InputProps = {
+  label?: string;
+  refProp: UseFormRegister<FieldValues>;
+  error?: string;
+  name: string;
+};
+export type InputPropsText = {
   label: string;
-  refProp: React.RefObject<HTMLInputElement>;
-  error: boolean;
+  refProp: UseFormRegister<FieldValues>;
+  name: string;
+  error?: string;
+  validate: ValidateNames;
 };
 
 export type SelectInputProps = {

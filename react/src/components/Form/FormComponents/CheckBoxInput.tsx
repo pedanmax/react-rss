@@ -1,18 +1,7 @@
 import React from 'react';
-import { UseFormRegister, FieldValues } from 'react-hook-form';
-import { RadioInputProps } from 'types/Types';
+import { InputProps } from 'types/Types';
 
-const CheckBoxInput = ({
-  error,
-  label,
-  refProp,
-  name,
-}: {
-  label: string;
-  refProp: UseFormRegister<FieldValues>;
-  error?: string;
-  name: string;
-}) => {
+const CheckBoxInput = ({ error, label, refProp, name }: InputProps) => {
   return (
     <div className='form__box'>
       <div

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FeedBackCard, FeedBackCardFromHook } from 'types/Types';
+import { FeedBackCard } from 'types/Types';
 import FeedBackCardComponent from '../../components/FeedBackCard/FeedBackCardComponent';
 import './FeedBackCollection.scss';
 

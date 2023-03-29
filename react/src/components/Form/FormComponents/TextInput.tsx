@@ -1,20 +1,7 @@
 import React from 'react';
-import { UseFormRegister, FieldValues, FieldErrors } from 'react-hook-form';
-import { InputProps, ValidateNames } from 'types/Types';
+import { InputPropsText } from 'types/Types';
 
-const TextInput = ({
-  error,
-  label,
-  name,
-  refProp,
-  validate,
-}: {
-  label: string;
-  refProp: UseFormRegister<FieldValues>;
-  name: string;
-  error?: string;
-  validate: ValidateNames;
-}) => {
+const TextInput = ({ error, label, name, refProp, validate }: InputPropsText) => {
   return (
     <div className='form__box'>
       <input
