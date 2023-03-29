@@ -8,7 +8,7 @@ const FileInput = ({
   refProp,
   name,
 }: {
-  label: string;
+  label?: string;
   refProp: UseFormRegister<FieldValues>;
   error?: string;
   name: string;
@@ -20,7 +20,11 @@ const FileInput = ({
         data-testid='file'
         className='form__file input'
         accept='image/*'
-        {...refProp(name, { required: 'You must select a file of type image' })}
+        {...refProp(name, {
+          required: 'This field is required',
+          validate: (value) =>
+            (value[0] as File).type.includes('image') || 'You can choose file type only image',
+        })}
         style={{ boxShadow: !error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}
       />
       <div

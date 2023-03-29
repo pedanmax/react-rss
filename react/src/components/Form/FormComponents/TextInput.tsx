@@ -1,24 +1,31 @@
 import React from 'react';
 import { UseFormRegister, FieldValues, FieldErrors } from 'react-hook-form';
-import { InputProps } from 'types/Types';
+import { InputProps, ValidateNames } from 'types/Types';
 
 const TextInput = ({
   error,
   label,
   name,
   refProp,
+  validate,
 }: {
   label: string;
   refProp: UseFormRegister<FieldValues>;
   name: string;
   error?: string;
+  validate: ValidateNames;
 }) => {
   return (
     <div className='form__box'>
       <input
         type='text'
         {...refProp(name, {
-          required: 'Name must be over 3 symbols, only letters, first letter is uppercase',
+          required: 'This field is required',
+          minLength: {
+            value: 3,
+            message: 'Name is too short, minimum three letters',
+          },
+          validate: validate,
         })}
         className='form__name input'
         autoComplete='off'

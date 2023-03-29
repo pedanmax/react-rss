@@ -17,7 +17,7 @@ export type FeedBackCard = {
   date?: string;
   select?: string;
   radio?: string;
-  image?: string | FileList;
+  image?: string | FileList | File;
   checkBoxes?: string | string[];
   radioBoxes?: string;
 };
@@ -60,8 +60,14 @@ export type SelectInputProps = {
   refProp: React.RefObject<HTMLSelectElement>;
   error: boolean;
 };
+
 export type RadioInputProps = {
   label: string;
   refProp: React.RefObject<HTMLInputElement>[];
   error: boolean;
+};
+
+export type ValidateNames = {
+  firstLetter: (value: string) => boolean | string;
+  numbers?: (value: string) => boolean | string;
 };
