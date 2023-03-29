@@ -9,7 +9,6 @@ const FeedBackCollection = ({ cards }: { cards: FeedBackCard[] }) => {
       {cards.length > 0 && <h2 className='form-page__subtitle'>Feedbacks about movies</h2>}
       <div className='form-page__collection collection'>
         {cards.map((item, index) => {
-          console.log(item);
           return <FeedBackCardComponent key={index} obj={item} />;
         })}
       </div>

@@ -23,9 +23,7 @@ export type FeedBackCard = {
 };
 
 export type FeedBackCardFromHook = {
-  checkBoxEn?: string | boolean;
-  checkBoxUa?: string | boolean;
-  checkBoxSp?: string | undefined;
+  checkBox?: string | string[];
   date?: string;
   image?: FileList | string;
   movie?: string;

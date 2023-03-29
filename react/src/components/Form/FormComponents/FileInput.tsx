@@ -6,10 +6,12 @@ const FileInput = ({
   error,
   label,
   refProp,
+  name,
 }: {
   label: string;
   refProp: UseFormRegister<FieldValues>;
-  error: boolean;
+  error?: string;
+  name: string;
 }) => {
   return (
     <div className='form__box'>
@@ -18,17 +20,17 @@ const FileInput = ({
         data-testid='file'
         className='form__file input'
         accept='image/*'
-        {...refProp('image')}
-        style={{ boxShadow: error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}
+        {...refProp(name, { required: 'You must select a file of type image' })}
+        style={{ boxShadow: !error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}
       />
       <div
         className='form__icon'
         style={{
-          opacity: error ? '0' : '1',
-          cursor: error ? 'default' : 'pointer',
+          opacity: !error ? '0' : '1',
+          cursor: !error ? 'default' : 'pointer',
         }}
       >
-        <div className='form__error'>You must select a file of type image</div>
+        <div className='form__error'>{error}</div>
       </div>
       <label htmlFor='file' className='form__label'>
         {label}

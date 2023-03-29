@@ -6,28 +6,30 @@ const DateInput = ({
   error,
   label,
   refProp,
+  name,
 }: {
   label: string;
   refProp: UseFormRegister<FieldValues>;
-  error: boolean;
+  error?: string;
+  name: string;
 }) => {
   return (
     <div className='form__box'>
       <input
         type='date'
         className='form__date input'
-        {...refProp('date')}
+        {...refProp(name, { required: 'This date has not yet come or not valid' })}
         data-testid='date'
-        style={{ boxShadow: error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}
+        style={{ boxShadow: !error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}
       />
       <div
         className='form__icon'
         style={{
-          opacity: error ? '0' : '1',
-          cursor: error ? 'default' : 'pointer',
+          opacity: error ? '1' : '0',
+          cursor: error ? 'pointer' : 'default',
         }}
       >
-        <div className='form__error'>This date has not yet come or not valid</div>
+        {error && <div className='form__error'>{error}</div>}
       </div>
       <label htmlFor='date' className='form__label'>
         {label}

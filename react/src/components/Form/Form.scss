@@ -101,8 +101,7 @@
     display: none;
     cursor: default;
     &_checkbox {
-      top: 50px;
-      left: 0;
+      left: -16px;
     }
     &::before {
       content: '';

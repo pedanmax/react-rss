@@ -13,9 +13,8 @@ const Form = ({ addFeedBackToState }: PropsForm) => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
-  } = useForm();
+  } = useForm({ mode: 'onSubmit', reValidateMode: 'onSubmit' });
   const [formState, setFormState] = useState({
     validate: false,
     fields: {
@@ -29,48 +28,62 @@ const Form = ({ addFeedBackToState }: PropsForm) => {
     },
   });
   const onSubmit = (data: FeedBackCardFromHook) => {
-    console.log(data);
-    const info: FeedBackCard = {
-      name: data.name,
-      movie: data.movie,
-      date: data.date,
-      select: data.select,
-      checkBoxes: [data.checkBoxEn, data.checkBoxUa, data.checkBoxSp]
-        .filter((i) => i)
-        .join(', ') as string,
-      radio: data.radio,
-      image: data.image,
-    };
-    console.log(info);
-    addFeedBackToState(info);
-    return info;
+    // const info: FeedBackCard = {
+    //   name: data.name,
+    //   movie: data.movie,
+    //   date: data.date,
+    //   select: data.select,
+    //   checkBoxes: data.checkBox,
+    //   radio: data.radio,
+    //   image: data.image,
+    // };
+    addFeedBackToState(data);
   };
+  // console.log(errors);
   return (
     <form action='#' className='form-page__form form' onSubmit={handleSubmit(onSubmit)}>
-      <TextInput refProp={register} name='name' label='Your name?' error={formState.fields.name} />
+      <TextInput
+        refProp={register}
+        name='name'
+        label='Your name?'
+        error={errors?.name?.message?.toString()}
+      />
       <TextInput
         refProp={register}
         name='movie'
         label='Movie name?'
-        error={formState.fields.movie}
+        error={errors.movie?.message?.toString()}
       />
       <DateInput
         refProp={register}
+        name='date'
         label='When did you watch this movie?'
-        error={formState.fields.date}
+        error={errors.date?.message?.toString()}
       />
       <SelectInput
         refProp={register}
+        name='select'
         label='What is your mood after the movie?'
-        error={formState.fields.select}
+        error={errors.select?.message?.toString()}
       />
       <CheckBoxInput
         refProp={register}
         label='What subtitles this movie has?'
-        error={formState.fields.checkBoxes}
+        error={errors.checkBox?.message?.toString()}
+        name={'checkBox'}
       />
-      <RadioInput refProp={register} label='Rate this movie' error={formState.fields.radioBoxes} />
-      <FileInput refProp={register} label='Upload your photo' error={formState.fields.image} />
+      <RadioInput
+        refProp={register}
+        name='radio'
+        label='Rate this movie'
+        error={errors.radio?.message?.toString()}
+      />
+      <FileInput
+        refProp={register}
+        label='Upload your photo'
+        error={errors.file?.message?.toString()}
+        name='file'
+      />
       <input type='submit' className='form__submit' value='Send feedback' />
     </form>
   );

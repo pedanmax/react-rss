@@ -6,22 +6,24 @@ const CheckBoxInput = ({
   error,
   label,
   refProp,
+  name,
 }: {
   label: string;
   refProp: UseFormRegister<FieldValues>;
-  error: boolean;
+  error?: string;
+  name: string;
 }) => {
   return (
     <div className='form__box'>
       <div
         className='form__inputs'
-        style={{ boxShadow: error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}
+        style={{ boxShadow: !error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}
       >
         <div className='form__input-box'>
           <input
             type='checkbox'
             className='form__checkbox'
-            {...refProp('checkBoxEn')}
+            {...refProp(name, { required: 'You must select at least one option' })}
             value='English'
             id='checkbox1'
           />
@@ -31,8 +33,8 @@ const CheckBoxInput = ({
           <input
             type='checkbox'
             className='form__checkbox'
-            {...refProp('checkBoxUa')}
-            value='Ukrainian'
+            {...refProp(name, { required: 'You must select at least one option' })}
+            value=' Ukrainian'
             id='checkbox2'
           />
           <label htmlFor='checkbox2'>Ukrainian</label>
@@ -41,24 +43,21 @@ const CheckBoxInput = ({
           <input
             type='checkbox'
             className='form__checkbox'
-            {...refProp('checkBoxSp')}
-            value='Spanish'
+            {...refProp(name, { required: 'You must select at least one option' })}
+            value=' Spanish'
             id='checkbox3'
           />
-          {!error && (
-            <p className='form__error form__error_checkbox'>You must choose at least one option</p>
-          )}
           <label htmlFor='checkbox3'>Spanish</label>
         </div>
       </div>
       <div
         className='form__icon'
         style={{
-          opacity: error ? '0' : '1',
-          cursor: error ? 'default' : 'pointer',
+          opacity: error ? '1' : '0',
+          cursor: error ? 'pointer' : 'default',
         }}
       >
-        <div className='form__error'>You must select at least one option</div>
+        {error && <p className='form__error form__error_checkbox'>{error}</p>}
       </div>
       <h5 className='form__label'>{label}</h5>
     </div>
