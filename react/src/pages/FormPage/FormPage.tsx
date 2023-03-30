@@ -1,4 +1,4 @@
-import React, { createRef, useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Form from '../../components/Form/Form';
 import FeedBackCollection from '../../components/FeedBackCollection/FeedBackCollection';
 import Popap from '../../components/Popap/Popap';
@@ -7,8 +7,7 @@ import './FormPage.scss';
 
 const FormPage = () => {
   const [feedBackState, setFeeBacksState] = useState<FeedBackCard[]>([]);
-  const popap = createRef<HTMLDivElement>();
-
+  const popap = useRef<HTMLDivElement>(null);
   const showMessage = () => {
     const myPopap = popap.current;
     myPopap!.style.opacity = '1';
