@@ -11,32 +11,38 @@ const CheckBoxInput = ({ error, label, refProp, name }: InputProps) => {
         <div className='form__input-box'>
           <input
             type='checkbox'
-            className='form__checkbox'
+            className='form__checkbox checkbox'
             {...refProp(name, { required: 'You must select at least one option' })}
             value='English'
             id='checkbox1'
           />
-          <label htmlFor='checkbox1'>English</label>
+          <label htmlFor='checkbox1' className='label'>
+            English
+          </label>
         </div>
         <div className='form__input-box'>
           <input
             type='checkbox'
-            className='form__checkbox'
+            className='form__checkbox checkbox'
             {...refProp(name, { required: 'You must select at least one option' })}
             value=' Ukrainian'
             id='checkbox2'
           />
-          <label htmlFor='checkbox2'>Ukrainian</label>
+          <label htmlFor='checkbox2' className='label'>
+            Ukrainian
+          </label>
         </div>
         <div className='form__input-box'>
           <input
             type='checkbox'
-            className='form__checkbox'
+            className='form__checkbox checkbox'
             {...refProp(name, { required: 'You must select at least one option' })}
             value=' Spanish'
             id='checkbox3'
           />
-          <label htmlFor='checkbox3'>Spanish</label>
+          <label htmlFor='checkbox3' className='label'>
+            Spanish
+          </label>
         </div>
       </div>
       <div
