@@ -9,24 +9,24 @@ const FormPage = () => {
   const [feedBackState, setFeeBacksState] = useState<FeedBackCard[]>([]);
   const popap = createRef<HTMLDivElement>();
 
-  // const showMessage = () => {
-  //   const myPopap = popap.current;
-  //   myPopap!.style.opacity = '1';
-  //   myPopap!.style.zIndex = '10';
-  //   setTimeout(() => {
-  //     myPopap!.style.opacity = '0';
-  //     myPopap!.style.zIndex = '-1';
-  //   }, 2000);
-  // };
+  const showMessage = () => {
+    const myPopap = popap.current;
+    myPopap!.style.opacity = '1';
+    myPopap!.style.zIndex = '10';
+    setTimeout(() => {
+      myPopap!.style.opacity = '0';
+      myPopap!.style.zIndex = '-1';
+    }, 2000);
+  };
 
   const addFeedBackToState = (feedBack: FeedBackCard): void => {
-    // showMessage();
+    showMessage();
     setFeeBacksState(feedBackState.concat(feedBack));
   };
   return (
     <div className='form-page'>
       <h1 className='form-page__title'>Please fill out the form</h1>
-      {/* <Popap refProp={popap} /> */}
+      <Popap refProp={popap} />
       <Form addFeedBackToState={addFeedBackToState} />
       {feedBackState.length > 0 && <FeedBackCollection cards={feedBackState} />}
     </div>
