@@ -12,11 +12,11 @@ const RadioInput = ({ error, label, refProp, name }: InputProps) => {
           <input
             type='radio'
             id='radio1'
-            className='form__radio'
+            className='form__radio checkbox'
             {...refProp(name, { required: 'You must choose one option' })}
             value='1'
           />
-          <label htmlFor='radio1' className='form__label_radio'>
+          <label htmlFor='radio1' className='form__label_radio label'>
             1
           </label>
         </div>
@@ -24,11 +24,11 @@ const RadioInput = ({ error, label, refProp, name }: InputProps) => {
           <input
             type='radio'
             id='radio2'
-            className='form__radio'
+            className='form__radio checkbox'
             {...refProp(name, { required: 'You must choose one option' })}
             value='5'
           />
-          <label htmlFor='radio2' className='form__label_radio'>
+          <label htmlFor='radio2' className='form__label_radio label'>
             5
           </label>
         </div>
@@ -36,11 +36,11 @@ const RadioInput = ({ error, label, refProp, name }: InputProps) => {
           <input
             type='radio'
             id='radio3'
-            className='form__radio'
+            className='form__radio checkbox'
             {...refProp(name, { required: 'You must choose one option' })}
             value='10'
           />
-          <label htmlFor='radio3' className='form__label_radio'>
+          <label htmlFor='radio3' className='form__label_radio label'>
             10
           </label>
         </div>
