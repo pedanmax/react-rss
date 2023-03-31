@@ -3,15 +3,13 @@ import { render, screen } from '@testing-library/react';
 import FeedBackCardComponent from '../components/FeedBackCard/FeedBackCardComponent';
 
 const testObj = {
-  checkBoxEn: 'EN',
-  checkBoxUa: 'UA',
-  checkBoxSp: 'SP',
-  date: '22-03-2022',
-  image: '',
-  movie: 'Avatar',
   name: 'Maks',
-  radio: '10',
+  movie: 'Avatar',
+  date: '22-03-2022',
   select: 'amazing',
+  checkbox: 'English',
+  radio: '10',
+  image: '',
 };
 
 beforeEach(() => {
@@ -40,7 +38,7 @@ describe('FeedBackCardComponent', () => {
     expect(mood).toBeInTheDocument();
   });
   it('Card should contains subtitles', () => {
-    const subtitles = screen.getByText('Subtitles: U');
+    const subtitles = screen.getByText('Subtitles: English');
     expect(subtitles).toBeInTheDocument();
   });
   it('Card should contains rate movie', () => {
