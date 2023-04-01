@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import TextInput from './FormComponents/TextInput';
 import DateInput from './FormComponents/DateInput';
@@ -16,7 +16,7 @@ const Form = ({ addFeedBackToState }: PropsForm) => {
     formState: { errors },
     reset,
   } = useForm({ mode: 'onSubmit', reValidateMode: 'onSubmit' });
-
+  const [submited, setSubmited] = useState(false);
   const onSubmit = async (data: FeedBackCardFromHook) => {
     const myCard: FeedBackCard = {
       name: data.name,
@@ -28,6 +28,7 @@ const Form = ({ addFeedBackToState }: PropsForm) => {
       image: data.image ? data.image[0] : '',
     };
     addFeedBackToState(myCard);
+    setSubmited((prev) => !prev);
     reset();
   };
 
@@ -83,6 +84,7 @@ const Form = ({ addFeedBackToState }: PropsForm) => {
         label='Upload your photo'
         error={errors.image?.message?.toString()}
         name='image'
+        state={submited}
       />
       <input type='submit' className='form__submit' value='Send feedback' />
     </form>

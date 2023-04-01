@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { InputProps } from 'types/Types';
 
-const FileInput = ({ error, label, refProp, name }: InputProps) => {
+const FileInput = ({ error, label, refProp, name, state }: InputProps) => {
   const [nameFile, setNameFile] = useState('File is not selected');
+
   const handleNameFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       if (e.target.files[0]) {
@@ -10,9 +11,13 @@ const FileInput = ({ error, label, refProp, name }: InputProps) => {
       } else setNameFile('File is not selected');
     } else setNameFile('File is not selected');
   };
+
   return (
     <div className='form__box'>
-      <div className='form__inputs' style={{ padding: '7px 10px' }}>
+      <div
+        className='form__inputs'
+        style={{ boxShadow: !error ? '0 0 0px 0px red' : '0 0 5px 2px red', padding: '7px 10px' }}
+      >
         <input
           id='file'
           type='file'
@@ -21,16 +26,16 @@ const FileInput = ({ error, label, refProp, name }: InputProps) => {
           accept='image/*'
           {...refProp(name, {
             required: 'This field is required',
+            onChange: handleNameFile,
             validate: (value) =>
               (value[0] as File).type.includes('image') || 'You can choose file type only image',
           })}
-          onChange={handleNameFile}
-          style={{ boxShadow: !error ? '0 0 0px 0px red' : '0 0 5px 2px red', minWidth: 'auto' }}
+          style={{ minWidth: 'auto' }}
         />
         <label htmlFor='file' className='form__file-btn'>
           Choose photo
         </label>
-        <span className='test'>{nameFile}</span>
+        <span className='test'>{state ? 'File is not selected' : nameFile}</span>
       </div>
       <div
         className='form__icon'

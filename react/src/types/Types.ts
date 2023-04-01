@@ -56,6 +56,7 @@ export type InputProps = {
   refProp: UseFormRegister<FieldValues>;
   error?: string;
   name: string;
+  state?: boolean;
 };
 export type InputPropsText = {
   label: string;
