@@ -1,3 +1,19 @@
+.input {
+  display: block;
+  flex: 0 1 45%;
+  background-color: #c4c4c4;
+  padding: 12px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  min-width: 200px;
+  &:focus,
+  &:hover {
+    box-shadow: 0 0 10px 5px #0000008c;
+    outline: none;
+  }
+}
 .form {
   background-color: #fff;
   max-width: 800px;
@@ -23,16 +39,19 @@
   }
   &__inputs {
     flex: 0 1 45%;
+    max-width: 45%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: #c4c4c4;
     box-sizing: border-box;
     border-radius: 10px;
     padding: 14px;
     transition: all 0.3s ease;
+    position: relative;
+    height: 50px;
     &:focus,
     &:hover {
-      box-shadow: 0 0 10px 5px #0000008c;
       outline: none;
     }
   }
@@ -62,6 +81,22 @@
     }
     &:hover {
       box-shadow: 0 0 5px 2px red;
+    }
+  }
+  &__file{
+    visibility: hidden;
+    padding: 0;
+  }
+  &__file-btn{
+    position: absolute;
+    left: 12px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border:1px solid #000;
+    &:hover{
+      background-color:#a8a6a6;;
     }
   }
   &__label {
@@ -128,22 +163,6 @@
     }
   }
 }
-.input {
-  display: block;
-  flex: 0 1 45%;
-  background-color: #c4c4c4;
-  padding: 12px;
-  border-radius: 10px;
-  box-sizing: border-box;
-  transition: all 0.3s ease;
-  font-size: 16px;
-  min-width: 200px;
-  &:focus,
-  &:hover {
-    box-shadow: 0 0 10px 5px #0000008c;
-    outline: none;
-  }
-}
 
 .form__icon:hover > .form__error {
   display: block;
@@ -183,4 +202,7 @@
 }
 .checkbox{
   opacity: 0;
+}
+.test{
+  width: 150px;;
 }
