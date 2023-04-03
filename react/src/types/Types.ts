@@ -13,6 +13,13 @@ export type CardType = {
   genre: string;
 };
 
+export type CardFromAPI = {
+  title: string;
+  release_date: string;
+  id: number;
+  poster_path: string;
+};
+
 export type FeedBackCard = {
   name?: string;
   movie?: string;
