@@ -7,18 +7,17 @@ import { CardFromAPI } from 'types/Types';
 const CardList = () => {
   const [cards, setCards] = useState([]);
   // get default list of card
-  const url = 'https://api.themoviedb.org/3/list/3?api_key=7bc9e78d64d6eabc0a158c008db80432';
+  const url = 'https://api.themoviedb.org/3/list/1?api_key=7bc9e78d64d6eabc0a158c008db80432';
   useEffect(() => {
     fetch(url)
       .then((data) => data.json())
-      .then((data) => setCards(data.items));
-  }, []);
+      .then((data) => setCards(data.items.slice(0, 15)));
+  }, [cards]);
   return (
     <div className='home__cardlist'>
-      <h3 className='home__list-title'>Choose movie</h3>
-      {/* {console.log(cards)} */}
+      {cards.length > 0 && <h3 className='home__list-title'>Choose movie</h3>}
       <div className='home__cards'>
-        {cards &&
+        {cards.length ? (
           cards.map((card: CardFromAPI) => {
             return (
               <CardApi
@@ -29,7 +28,10 @@ const CardList = () => {
                 release_date={card.release_date}
               />
             );
-          })}
+          })
+        ) : (
+          <div>Loading...</div>
+        )}
       </div>
     </div>
   );
