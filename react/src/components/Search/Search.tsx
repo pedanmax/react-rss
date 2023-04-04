@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Props } from 'types/Types';
 import '../../pages/home/Home.scss';
 
-const Search = ({ getCards, loading }: Props) => {
+const Search = ({ loading }: Props) => {
   const [value, setValue] = useState(localStorage.getItem('inputValue') || '');
   const inputSearch = useRef('');
 
@@ -13,7 +13,6 @@ const Search = ({ getCards, loading }: Props) => {
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     localStorage.setItem('inputValue', inputSearch.current || '');
     e.preventDefault();
-    getCards(value);
     loading(true);
   };
 

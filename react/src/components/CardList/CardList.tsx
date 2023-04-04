@@ -1,25 +1,24 @@
 import React, { useState, useEffect } from 'react';
-// import Card from '../Card/Card';
 import CardApi from '../../components/Card/CardApi';
 import { CardFromAPI } from 'types/Types';
-// import cards from '../../data/cards.json';
 
 const CardList = ({
-  cardsFromSearch,
   loading,
+  loadingState,
 }: {
-  cardsFromSearch: CardFromAPI[];
   loading: (value: boolean) => void;
+  loadingState: boolean;
 }) => {
   const [cards, setCards] = useState<CardFromAPI[]>([]);
-  // get default list of card
+
   const url = 'https://api.themoviedb.org/3/list/1?api_key=7bc9e78d64d6eabc0a158c008db80432';
 
   useEffect(() => {
     if (!localStorage.getItem('inputValue')) {
       fetch(url)
         .then((data) => data.json())
-        .then((data) => setCards(data.items.slice(0, 15)));
+        .then((data) => setCards(data.items.slice(0, 15)))
+        .then(() => loading(false));
     } else {
       fetch(
         `https://api.themoviedb.org/3/search/movie?api_key=7bc9e78d64d6eabc0a158c008db80432&query=${localStorage.getItem(
@@ -27,21 +26,23 @@ const CardList = ({
         )}&page=1&include_adult=false`
       )
         .then((data) => data.json())
-        .then((data) => setCards(data.results));
+        .then((data) => setCards(data.results))
+        .then(() => loading(false));
     }
-    loading(false);
-  }, []);
-
-  useEffect(() => {
-    setCards(cardsFromSearch);
-    loading(false);
-  }, [cardsFromSearch]);
+  }, [loading]);
 
   return (
     <div className='home__cardlist'>
-      {cards.length > 0 && <h3 className='home__list-title'>Choose movie</h3>}
+      {loadingState ? (
+        <h3 className='home__list-title'>Loading...</h3>
+      ) : cards.length === 0 && !loadingState ? (
+        <h3 className='home__list-title'>Not found movie</h3>
+      ) : cards.length > 0 && !loadingState ? (
+        <h3 className='home__list-title'>Choose movie</h3>
+      ) : null}
+      {/* <h3 className='home__list-title'>{cards.length > 0 && 'Choose movie'}</h3> */}
       <div className='home__cards'>
-        {cards.length ? (
+        {cards.length > 0 &&
           cards.map((card: CardFromAPI) => {
             return (
               <CardApi
@@ -52,10 +53,7 @@ const CardList = ({
                 release_date={card.release_date}
               />
             );
-          })
-        ) : (
-          <div>Loading...</div>
-        )}
+          })}
       </div>
     </div>
   );
