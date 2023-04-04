@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CardApi from '../../components/Card/CardApi';
 import { CardFromAPI } from 'types/Types';
+import preloader from '../../assets/preload.gif';
 
 const CardList = ({
   loading,
@@ -31,16 +32,17 @@ const CardList = ({
     }
   }, [loading]);
 
+  const title = loadingState ? (
+    <img className='home__preloader' src={preloader} alt='preloader' />
+  ) : cards.length === 0 && !loadingState ? (
+    <h3 className='home__list-title'>Not found movie</h3>
+  ) : cards.length > 0 && !loadingState ? (
+    <h3 className='home__list-title'>Choose movie</h3>
+  ) : null;
+
   return (
     <div className='home__cardlist'>
-      {loadingState ? (
-        <h3 className='home__list-title'>Loading...</h3>
-      ) : cards.length === 0 && !loadingState ? (
-        <h3 className='home__list-title'>Not found movie</h3>
-      ) : cards.length > 0 && !loadingState ? (
-        <h3 className='home__list-title'>Choose movie</h3>
-      ) : null}
-      {/* <h3 className='home__list-title'>{cards.length > 0 && 'Choose movie'}</h3> */}
+      {title}
       <div className='home__cards'>
         {cards.length > 0 &&
           cards.map((card: CardFromAPI) => {

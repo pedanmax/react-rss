@@ -49,4 +49,9 @@
     justify-content: center;
     gap: 100px;
   }
+  &__preloader{
+    max-width: 100px;
+    margin: 0 auto 20px auto;
+    display: block;
+  }
 }
