@@ -89,3 +89,8 @@ export type ValidateNames = {
   firstLetter: (value: string) => boolean | string;
   numbers?: (value: string) => boolean | string;
 };
+
+export type GetCardsFunc = (param: string) => void;
+export type Props = {
+  getCards: GetCardsFunc;
+};
