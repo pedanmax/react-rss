@@ -91,6 +91,10 @@ export type ValidateNames = {
 };
 
 export type GetCardsFunc = (param: string) => void;
+
+export type ChangeLoading = (value: boolean) => void;
+
 export type Props = {
   getCards: GetCardsFunc;
+  loading: ChangeLoading;
 };

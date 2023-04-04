@@ -6,6 +6,7 @@ import { CardFromAPI } from 'types/Types';
 
 const Home = () => {
   const [cards, setCards] = useState([]);
+  const [loading, setLoading] = useState(true);
   const getCards = (param: string) => {
     if (param) {
       fetch(
@@ -19,11 +20,15 @@ const Home = () => {
         .then((data) => setCards(data.items.slice(0, 15)));
     }
   };
+  const changeLoading = (value: boolean) => {
+    setLoading(value);
+  };
   return (
     <div className='home'>
       <div className='home__container'>
-        <Search getCards={getCards} />
-        <CardList cardsFromSearch={cards} />
+        <Search getCards={getCards} loading={changeLoading} />
+        {loading && <div>Loading...</div>}
+        <CardList cardsFromSearch={cards} loading={changeLoading} />
       </div>
     </div>
   );
