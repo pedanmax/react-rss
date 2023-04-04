@@ -37,9 +37,10 @@
     transition: all 0.3s ease;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    cursor: no-drop;
+    cursor: pointer;
     border-radius: 5px;
     &:hover {
+      background-color: #c4c4c4;
     }
   }
   &__cards {

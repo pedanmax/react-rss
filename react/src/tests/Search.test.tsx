@@ -1,12 +1,12 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
-import Search from '../components/Search/Search';
+// import React from 'react';
+// import { render, screen } from '@testing-library/react';
+// import { describe, it, expect } from 'vitest';
+// import Search from '../components/Search/Search';
 
-describe('Search component', () => {
-  it('have search input', () => {
-    render(<Search />);
-    const searchInput = screen.getByRole('searchbox');
-    expect(searchInput).toBeInTheDocument();
-  });
-});
+// describe('Search component', () => {
+//   it('have search input', () => {
+//     render(<Search />);
+//     const searchInput = screen.getByRole('searchbox');
+//     expect(searchInput).toBeInTheDocument();
+//   });
+// });

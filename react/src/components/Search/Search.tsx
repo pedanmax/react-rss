@@ -1,7 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../../pages/home/Home.scss';
 
-const Search = () => {
+type GetCards = (param: string) => void;
+type Props = {
+  getCards: GetCards;
+};
+
+const Search = ({ getCards }: Props) => {
   const [value, setValue] = useState(localStorage.getItem('inputValue') || '');
   const inputSearch = useRef('');
 
@@ -15,8 +20,13 @@ const Search = () => {
     };
   }, []);
 
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    getCards(value);
+  };
+
   return (
-    <div className='home__search'>
+    <form name='search' className='home__search' onSubmit={handleSearch}>
       <input
         type='search'
         className='home__input'
@@ -26,8 +36,8 @@ const Search = () => {
           setValue(e.target.value);
         }}
       />
-      <button className='home__button'>Search</button>
-    </div>
+      <input type='submit' className='home__button' value='Search' />
+    </form>
   );
 };
 
