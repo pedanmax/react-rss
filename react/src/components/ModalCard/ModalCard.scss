@@ -1,5 +1,5 @@
 .modal{
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -10,8 +10,8 @@
   position: relative;
   &__title{
     font-weight: 700;
-    font-size: 26px;
-    margin-bottom: 10px;
+    font-size: 22px;
+    margin-bottom: 20px;
   }
   &__body{
     display: flex;
@@ -19,7 +19,8 @@
     margin-bottom: 20px;
   }
   &__image{
-    max-width: 500px;
+    max-width: 400px;
+    max-height: 350px;
   }
   &__info{
     display: flex;

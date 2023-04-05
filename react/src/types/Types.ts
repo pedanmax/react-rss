@@ -18,6 +18,19 @@ export type CardFromAPI = {
   release_date: string;
   id: number;
   poster_path: string;
+  getModalInfoCard: (obj: object) => void;
+};
+
+export type Genre = { id: number; name: string };
+
+export type ModalCardType = {
+  title?: string;
+  poster_path?: string;
+  release_date?: string;
+  genres?: Genre[];
+  popularity?: string;
+  overview?: string;
+  homepage?: string;
 };
 
 export type FeedBackCard = {

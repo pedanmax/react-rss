@@ -3,6 +3,12 @@ import { CardFromAPI } from 'types/Types';
 import './Card.scss';
 
 const CardApi = (props: CardFromAPI) => {
+  const handleCard = (id: number) => {
+    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=7bc9e78d64d6eabc0a158c008db80432`)
+      .then((data) => data.json())
+      .then((data) => props.getModalInfoCard(data));
+  };
+
   return (
     <div className='card' role='card-of-cardlist'>
       {props.poster_path && (
@@ -19,7 +25,7 @@ const CardApi = (props: CardFromAPI) => {
         <div className='card__text' data-testid='year'>
           Release date: {props.release_date}
         </div>
-        <button className='card__button' onClick={() => console.log(props?.id)}>
+        <button className='card__button' onClick={() => handleCard(props.id)}>
           View more
         </button>
       </div>

@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import CardApi from '../../components/Card/CardApi';
-import ModalCard from '../../components/ModalCard/ModalCard';
 import { CardFromAPI } from 'types/Types';
 import preloader from '../../assets/preload.gif';
 
 const CardList = ({
   loading,
   loadingState,
+  getModalInfoCard,
 }: {
   loading: (value: boolean) => void;
   loadingState: boolean;
+  getModalInfoCard: (obj: object) => void;
 }) => {
   const [cards, setCards] = useState<CardFromAPI[]>([]);
 
@@ -33,10 +34,6 @@ const CardList = ({
     }
   }, [loading]);
 
-  fetch('https://api.themoviedb.org/3/movie/634649?api_key=7bc9e78d64d6eabc0a158c008db80432')
-    .then((data) => data.json())
-    .then((data) => console.log(data));
-
   const title = loadingState ? (
     <img className='home__preloader' src={preloader} alt='preloader' />
   ) : cards.length === 0 && !loadingState ? (
@@ -44,11 +41,10 @@ const CardList = ({
   ) : cards.length > 0 && !loadingState ? (
     <h3 className='home__list-title'>Choose movie</h3>
   ) : null;
-  console.log(cards);
+
   return (
     <div className='home__cardlist'>
       {title}
-      <ModalCard />
       <div className='home__cards'>
         {cards.length > 0 &&
           cards.map((card: CardFromAPI) => {
@@ -59,6 +55,7 @@ const CardList = ({
                 poster_path={card.poster_path}
                 title={card.title}
                 release_date={card.release_date}
+                getModalInfoCard={getModalInfoCard}
               />
             );
           })}
