@@ -1,6 +1,7 @@
 import React from 'react';
 import { CardFromAPI } from 'types/Types';
 import './Card.scss';
+
 const CardApi = (props: CardFromAPI) => {
   return (
     <div className='card' role='card-of-cardlist'>

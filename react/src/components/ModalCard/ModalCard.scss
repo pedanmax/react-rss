@@ -1,0 +1,65 @@
+.modal{
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background-color: #aeaeae;
+  position: relative;
+  &__title{
+    font-weight: 700;
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+  &__body{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  &__image{
+    max-width: 500px;
+  }
+  &__info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__item-home-page{
+    color: #000;
+    font-weight: 500;
+  }
+  &__desc{
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #000;
+    background-color: #9d9d9d;
+  }
+  &__close{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    &::before, &::after{
+      content: '';
+      width: 26px;
+      height: 2px;
+      background-color: #000;
+      position: absolute;
+    }
+    &::after{
+      top: 16px;
+      left: 0;
+      transform: rotate(-45deg);
+    }
+    &::before{
+      bottom: 12px;
+      left: 0;
+      transform: rotate(45deg);
+    }
+  }
+
+}
