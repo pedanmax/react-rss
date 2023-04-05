@@ -7,6 +7,7 @@ const CardApi = (props: CardFromAPI) => {
     fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=7bc9e78d64d6eabc0a158c008db80432`)
       .then((data) => data.json())
       .then((data) => props.getModalInfoCard(data));
+    props.changeModalState(true);
   };
 
   return (

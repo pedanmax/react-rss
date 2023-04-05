@@ -7,10 +7,12 @@ const CardList = ({
   loading,
   loadingState,
   getModalInfoCard,
+  changeModalState,
 }: {
   loading: (value: boolean) => void;
   loadingState: boolean;
   getModalInfoCard: (obj: object) => void;
+  changeModalState: (value: boolean) => void;
 }) => {
   const [cards, setCards] = useState<CardFromAPI[]>([]);
 
@@ -56,6 +58,7 @@ const CardList = ({
                 title={card.title}
                 release_date={card.release_date}
                 getModalInfoCard={getModalInfoCard}
+                changeModalState={changeModalState}
               />
             );
           })}

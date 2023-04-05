@@ -19,6 +19,7 @@ export type CardFromAPI = {
   id: number;
   poster_path: string;
   getModalInfoCard: (obj: object) => void;
+  changeModalState: ChangeModalState;
 };
 
 export type Genre = { id: number; name: string };
@@ -28,7 +29,7 @@ export type ModalCardType = {
   poster_path?: string;
   release_date?: string;
   genres?: Genre[];
-  popularity?: string;
+  budget?: string;
   overview?: string;
   homepage?: string;
 };
@@ -106,6 +107,8 @@ export type ValidateNames = {
 export type GetCardsFunc = (param: string) => void;
 
 export type ChangeLoading = (value: boolean) => void;
+
+export type ChangeModalState = (value: boolean) => void;
 
 export type Props = {
   loading: ChangeLoading;

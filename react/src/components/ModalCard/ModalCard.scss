@@ -1,13 +1,16 @@
 .modal{
   max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
   padding: 20px;
   border: 2px solid #000;
   border-radius: 10px;
   background-color: #aeaeae;
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s ease;
   &__title{
     font-weight: 700;
     font-size: 22px;
@@ -62,5 +65,16 @@
       transform: rotate(45deg);
     }
   }
-
+}
+.home__shadow{
+  position: fixed;
+  background-color: #0000009a;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.5s ease;
+  z-index: -1;
+  opacity: 0;
+  z-index: -1;
 }
