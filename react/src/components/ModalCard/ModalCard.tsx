@@ -17,8 +17,9 @@ const ModalCard = ({
   const budget = modalCardInfo.budget ? modalCardInfo.budget.toLocaleString() : '';
   const genresArr = modalCardInfo.genres;
   const genres = genresArr?.map((genre) => genre.name);
-  const closeModalCard = () => changeModalState(false);
-
+  const closeModalCard = () => {
+    changeModalState(false);
+  };
   return (
     <>
       <div

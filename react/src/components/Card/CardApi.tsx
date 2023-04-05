@@ -26,7 +26,12 @@ const CardApi = (props: CardFromAPI) => {
         <div className='card__text' data-testid='year'>
           Release date: {props.release_date}
         </div>
-        <button className='card__button' onClick={() => handleCard(props.id)}>
+        <button
+          className='card__button'
+          onClick={() => {
+            handleCard(props.id);
+          }}
+        >
           View more
         </button>
       </div>
