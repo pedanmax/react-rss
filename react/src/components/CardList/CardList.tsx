@@ -2,7 +2,14 @@ import React, { useState, useEffect } from 'react';
 import CardApi from '../../components/Card/CardApi';
 import { CardFromAPI } from 'types/Types';
 import preloader from '../../assets/preload.gif';
-
+// const test = {
+//   title: 'string',
+//   release_date: 'asdas',
+//   id: 1,
+//   poster_path: 'asd',
+//   getModalInfoCard,
+//   changeModalState,
+// },
 const CardList = ({
   loading,
   loadingState,
@@ -22,7 +29,12 @@ const CardList = ({
     if (!localStorage.getItem('inputValue')) {
       fetch(url)
         .then((data) => data.json())
-        .then((data) => setCards(data.items.slice(0, 15)))
+        .then((data) => {
+          if (data.items) {
+            console.log(data.items);
+            setCards(data.items);
+          }
+        })
         .then(() => loading(false));
     } else {
       fetch(
@@ -48,7 +60,7 @@ const CardList = ({
     <div className='home__cardlist'>
       {title}
       <div className='home__cards'>
-        {cards.length > 0 &&
+        {cards &&
           cards.map((card: CardFromAPI) => {
             return (
               <CardApi
