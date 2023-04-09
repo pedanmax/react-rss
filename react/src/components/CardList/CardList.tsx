@@ -2,14 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CardApi from '../../components/Card/CardApi';
 import { CardFromAPI } from 'types/Types';
 import preloader from '../../assets/preload.gif';
-// const test = {
-//   title: 'string',
-//   release_date: 'asdas',
-//   id: 1,
-//   poster_path: 'asd',
-//   getModalInfoCard,
-//   changeModalState,
-// },
+
 const CardList = ({
   loading,
   loadingState,
@@ -31,7 +24,6 @@ const CardList = ({
         .then((data) => data.json())
         .then((data) => {
           if (data.items) {
-            console.log(data.items);
             setCards(data.items);
           }
         })
@@ -47,7 +39,7 @@ const CardList = ({
         .then(() => loading(false));
     }
   }, [loading]);
-
+  console.log(cards);
   const title = loadingState ? (
     <img className='home__preloader' src={preloader} alt='preloader' />
   ) : cards.length === 0 && !loadingState ? (

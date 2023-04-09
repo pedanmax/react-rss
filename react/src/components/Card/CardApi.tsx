@@ -17,6 +17,7 @@ const CardApi = (props: CardFromAPI) => {
           className='card__img'
           src={`https://image.tmdb.org/t/p/w500/${props.poster_path}`}
           data-testid='image'
+          alt='poster'
         ></img>
       )}
       <div className='card__info'>
@@ -28,7 +29,9 @@ const CardApi = (props: CardFromAPI) => {
         </div>
         <button
           className='card__button'
+          data-testid='button'
           onClick={() => {
+            console.log(props.id);
             handleCard(props.id);
           }}
         >

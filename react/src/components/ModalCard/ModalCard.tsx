@@ -29,6 +29,7 @@ const ModalCard = ({
       ></div>
       <div
         className='home__modal modal'
+        data-testid='modal'
         style={classModal ? { opacity: 1, zIndex: 10 } : { opacity: 0, zIndex: -1 }}
       >
         <div className='modal__close' onClick={closeModalCard}></div>
@@ -37,7 +38,7 @@ const ModalCard = ({
           <img src={imgUrl} alt='poster' className='modal__image' />
           <ul className='modal__info'>
             <li className='modal__item'>Date release: {modalCardInfo.release_date}</li>
-            <li className='modal__item'>Gengre: {genres?.join(', ')}</li>
+            <li className='modal__item'>Genre: {genres?.join(', ')}</li>
             <li className='modal__item'>Budget: {budget}</li>
             <li className='modal__item'>
               <a
