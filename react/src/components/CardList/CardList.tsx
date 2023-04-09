@@ -39,7 +39,6 @@ const CardList = ({
         .then(() => loading(false));
     }
   }, [loading]);
-  console.log(cards);
   const title = loadingState ? (
     <img className='home__preloader' src={preloader} alt='preloader' />
   ) : cards.length === 0 && !loadingState ? (

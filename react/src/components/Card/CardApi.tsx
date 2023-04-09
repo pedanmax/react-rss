@@ -31,7 +31,6 @@ const CardApi = (props: CardFromAPI) => {
           className='card__button'
           data-testid='button'
           onClick={() => {
-            console.log(props.id);
             handleCard(props.id);
           }}
         >

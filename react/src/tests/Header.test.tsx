@@ -22,21 +22,21 @@ describe('Header', () => {
       screen.getByRole('heading', {
         level: 2,
       })
-    ).toHaveTextContent('Current page: Home');
+    ).toHaveTextContent('Current page: home');
 
     fireEvent.click(aboutLink);
     expect(
       screen.getByRole('heading', {
         level: 2,
       })
-    ).toHaveTextContent('Current page: About');
+    ).toHaveTextContent('Current page: about');
 
     fireEvent.click(formLink);
     expect(
       screen.getByRole('heading', {
         level: 2,
       })
-    ).toHaveTextContent('Current page: Form');
+    ).toHaveTextContent('Current page: form');
   });
 
   it('add active class to link in navigation by click', () => {

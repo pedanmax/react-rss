@@ -1,24 +1,27 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import './Header.scss';
 
+export const LocationDisplay = () => {
+  const location = useLocation();
+  return <span>{location.pathname == '/' ? 'home' : location.pathname.slice(1)}</span>;
+};
+
 const Header = () => {
-  const [title, setTitle] = useState(' Home');
   return (
     <header className='header'>
       <div className='header__container'>
         <h2 className='header__title'>
-          Current page:
-          {title}
+          Current page: <LocationDisplay />
         </h2>
         <nav className='header__navigation'>
-          <NavLink to='/' className='header__item' onClick={() => setTitle(' Home')}>
+          <NavLink to='/' className='header__item'>
             Home
           </NavLink>
-          <NavLink to='/about' className='header__item' onClick={() => setTitle(' About')}>
+          <NavLink to='/about' className='header__item'>
             About
           </NavLink>
-          <NavLink to='/form' className='header__item' onClick={() => setTitle(' Form')}>
+          <NavLink to='/form' className='header__item'>
             Form
           </NavLink>
         </nav>
