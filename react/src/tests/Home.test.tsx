@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import { vi } from 'vitest';
 import { fireEvent } from '@testing-library/react';
 import { server } from '../mocks/server';
 import Home from '../pages/Home/Home';
