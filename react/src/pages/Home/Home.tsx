@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Search from '../../components/Search/Search';
 import CardList from '../../components/CardList/CardList';
 import ModalCard from '../../components/ModalCard/ModalCard';
-import { useScrollBlock } from '../../hooks/UseScrollBlock';
 import { ModalCardType } from 'types/Types';
 import './Home.scss';
 
@@ -11,7 +10,6 @@ const Home = () => {
   const [modalCardInfo, setModalCardInfo] = useState<ModalCardType>({});
   const [openModal, setOpenModal] = useState(false);
   const [classModal, setClassModal] = useState(false);
-  const [blockScroll, allowScroll] = useScrollBlock();
   const changeLoading = (value: boolean) => {
     setLoading(value);
   };
@@ -27,8 +25,6 @@ const Home = () => {
   useEffect(() => {
     setClassModal((prev) => !prev);
   }, [openModal]);
-
-  openModal ? blockScroll() : allowScroll();
 
   return (
     <div className='home'>
