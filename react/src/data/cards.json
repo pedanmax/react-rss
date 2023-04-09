@@ -5,7 +5,8 @@
     "views": 1003,
     "year": 2018,
     "country": "USA",
-    "genre": "Fantastic"
+    "genre": "Fantastic",
+    "id": 1
   },
   {
     "title": "Zama",
@@ -13,7 +14,8 @@
     "views": 2333,
     "year": 2018,
     "country": "Argentina",
-    "genre": "Historical drama"
+    "genre": "Historical drama",
+    "id": 2
   },
   {
     "title": "The Tribe",
@@ -21,7 +23,8 @@
     "views": 1111,
     "year": 2014,
     "country": "Netherlands / Ukraine",
-    "genre": "Crime"
+    "genre": "Crime",
+    "id": 3
   },
   {
     "title": "Lincoln",
@@ -29,7 +32,8 @@
     "views": 12003,
     "year": 2012,
     "country": "USA",
-    "genre": "Historical drama"
+    "genre": "Historical drama",
+    "id": 4
   },
   {
     "title": "Personal Shopper",
@@ -37,7 +41,8 @@
     "views": 1456,
     "year": 2016,
     "country": "France / Germany",
-    "genre": "psychological thriller"
+    "genre": "psychological thriller",
+    "id": 5
   },
   {
     "title": "Black Coal, Thin Ice",
@@ -45,7 +50,8 @@
     "views": 11233,
     "year": 2014,
     "country": "China",
-    "genre": "Thriller"
+    "genre": "Thriller",
+    "id": 6
   },
   {
     "title": "Hereditary",
@@ -53,7 +59,8 @@
     "views": 11233,
     "year": 2018,
     "country": "USA",
-    "genre": "Psychological horro"
+    "genre": "Psychological horro",
+    "id": 7
   },
   {
     "title": "Amour",
@@ -61,7 +68,8 @@
     "views": 11233,
     "year": 2012,
     "country": "France",
-    "genre": "Romantic drama"
+    "genre": "Romantic drama",
+    "id": 8
   },
   {
     "title": "Elena",
@@ -69,7 +77,8 @@
     "views": 11233,
     "year": 2011,
     "country": "Russia",
-    "genre": "Crime drama"
+    "genre": "Crime drama",
+    "id": 9
   },
   {
     "title": "I Am Not Your Negro",
@@ -77,7 +86,8 @@
     "views": 11233,
     "year": 2016,
     "country": "USA / Germany",
-    "genre": "Documentary"
+    "genre": "Documentary",
+    "id": 10
   },
   {
     "title": "Call Me By Your Name",
@@ -85,7 +95,8 @@
     "views": 11233,
     "year": 2017,
     "country": "Italy",
-    "genre": "Romantic drama"
+    "genre": "Romantic drama",
+    "id": 11
   },
   {
     "title": "First Reformed",
@@ -93,6 +104,7 @@
     "views": 11233,
     "year": 2017,
     "country": "USA",
-    "genre": "Psychological drama"
+    "genre": "Psychological drama",
+    "id": 12
   }
 ]
