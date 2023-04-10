@@ -1,19 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Props } from 'types/Types';
+import { useSelector, useDispatch } from 'react-redux';
+import { actions } from '../../reducers/searchValueSlice';
 import '../../pages/home/Home.scss';
 
-const Search = ({ loading }: Props) => {
-  const [value, setValue] = useState(localStorage.getItem('inputValue') || '');
-  const inputSearch = useRef('');
+type State = { searchValue: { value: string } };
 
-  useEffect(() => {
-    inputSearch.current = value;
-  }, [value]);
+const Search = ({ loading }: Props) => {
+  // const searchValue = useSelector(selectValue);
+  const dispatch = useDispatch();
+  const search = useSelector((state: State) => state.searchValue);
+
+  // const [value, setValue] = useState(localStorage.getItem('inputValue') || '');
+  console.log(search.value);
+  const inputSearch = useRef<HTMLInputElement>(null);
+  // useEffect(() => {
+  //   inputSearch.current = value;
+  // }, [value]);
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-    localStorage.setItem('inputValue', inputSearch.current || '');
+    // localStorage.setItem('inputValue', inputSearch.current || '');
     e.preventDefault();
     loading(true);
+    if (inputSearch.current) dispatch(actions.write(inputSearch.current.value));
   };
 
   return (
@@ -22,10 +31,8 @@ const Search = ({ loading }: Props) => {
         type='search'
         className='home__input'
         placeholder='search...'
-        value={value}
-        onChange={(e) => {
-          setValue(e.target.value);
-        }}
+        defaultValue={search.value}
+        ref={inputSearch}
       />
       <input type='submit' className='home__button' value='Search' />
     </form>
