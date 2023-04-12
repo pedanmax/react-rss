@@ -35,12 +35,7 @@ const Home = () => {
           changeModalState={changeModalState}
           classModal={classModal}
         />
-        <CardList
-          loading={changeLoading}
-          loadingState={loading}
-          getModalInfoCard={getModalInfoCard}
-          changeModalState={changeModalState}
-        />
+        <CardList getModalInfoCard={getModalInfoCard} changeModalState={changeModalState} />
       </div>
     </div>
   );

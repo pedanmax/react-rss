@@ -1,11 +1,16 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { reducer as writeSearch } from '../reducers/searchValueSlice';
+import { reducer as writeSearch } from '../reducers/searchSlice';
+import { reducer as addCards } from '../reducers/getCardsSlice';
+import { api } from '../api/api';
 
 const reducers = combineReducers({
-  searchValue: writeSearch,
+  search: writeSearch,
+  cards: addCards,
+  [api.reducerPath]: api.reducer,
 });
 export const store = configureStore({
   reducer: reducers,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(api.middleware),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
