@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import CardApi from '../../components/Card/CardApi';
 import Preload from '../../components/Preload/Preload';
 import { CardFromAPI } from 'types/Types';
-import { actions } from '../../reducers/getCardsSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useGetMoviesQuery } from '../../api/api';
 const API_KEY = 'api_key=7bc9e78d64d6eabc0a158c008db80432';
 const CardList = ({
@@ -15,17 +14,11 @@ const CardList = ({
 }) => {
   const { value } = useSelector((state: { search: { value: string } }) => state.search);
 
-  const dispatch = useDispatch();
   const { isLoading, data } = useGetMoviesQuery(
-    value !== '' ? `search/movie?${API_KEY}&query=${value}` : `list/1?${API_KEY}`
+    value ? `search/movie?${API_KEY}&query=${value}` : `list/1?${API_KEY}`
   );
-  const cards = useSelector((state: { cards: CardFromAPI[] }) => state.cards);
-
-  useEffect(() => {
-    value === ''
-      ? dispatch(actions.addCards(data?.items))
-      : dispatch(actions.addCards(data?.results));
-  }, [data?.items, data?.results, dispatch, isLoading, value]);
+  let cards;
+  if (!isLoading) cards = data.items ? data.items : data.results;
 
   return (
     <div className='home__cardlist'>
