@@ -6,7 +6,7 @@ import '../../pages/home/Home.scss';
 
 type State = { search: { value: string } };
 
-const Search = ({ loading }: Props) => {
+const Search = () => {
   const dispatch = useDispatch();
   const search = useSelector((state: State) => state.search);
 
@@ -14,7 +14,6 @@ const Search = ({ loading }: Props) => {
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    loading(true);
     dispatch(actions.write(inputSearch.current?.value));
   };
 

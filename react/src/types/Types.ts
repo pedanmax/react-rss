@@ -18,8 +18,7 @@ export type CardFromAPI = {
   release_date: string;
   id: number;
   poster_path: string;
-  getModalInfoCard: (obj: object) => void;
-  changeModalState: ChangeModalState;
+  getModalCardId: (value: number) => void;
 };
 
 export type Genre = { id: number; name: string };

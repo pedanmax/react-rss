@@ -6,36 +6,28 @@ import { ModalCardType } from 'types/Types';
 import './Home.scss';
 
 const Home = () => {
-  const [loading, setLoading] = useState(true);
-  const [modalCardInfo, setModalCardInfo] = useState<ModalCardType>({});
+  const [modalCardId, setModalCardId] = useState<number | string>('');
   const [openModal, setOpenModal] = useState(false);
-  const [classModal, setClassModal] = useState(false);
-  const changeLoading = (value: boolean) => {
-    setLoading(value);
-  };
 
-  const getModalInfoCard = (obj: object) => {
-    setModalCardInfo(obj);
+  const getModalCardId = (value: number | string) => {
+    setModalCardId(value);
   };
 
   const changeModalState = (value: boolean) => {
     setOpenModal(value);
   };
-
-  useEffect(() => {
-    setClassModal((prev) => !prev);
-  }, [openModal]);
-
   return (
     <div className='home'>
       <div className='home__container'>
-        <Search loading={changeLoading} />
-        <ModalCard
-          modalCardInfo={modalCardInfo}
-          changeModalState={changeModalState}
-          classModal={classModal}
-        />
-        <CardList getModalInfoCard={getModalInfoCard} changeModalState={changeModalState} />
+        <Search />
+        {modalCardId && (
+          <ModalCard
+            modalCardId={modalCardId}
+            changeModalState={changeModalState}
+            getModalCardId={getModalCardId}
+          />
+        )}
+        <CardList getModalCardId={getModalCardId} />
       </div>
     </div>
   );

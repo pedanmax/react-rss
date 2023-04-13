@@ -9,6 +9,7 @@
   left: 50%;
   transform: translate(-50%,-50%);
   transition: all 0.5s ease;
+  z-index: 10;
   &__title{
     font-weight: 700;
     font-size: 22px;
@@ -72,4 +73,5 @@
   right: 0;
   bottom: 0;
   transition: all 0.5s ease;
+  z-index: 9;
 }

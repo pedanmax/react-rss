@@ -1,17 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import CardApi from '../../components/Card/CardApi';
 import Preload from '../../components/Preload/Preload';
 import { CardFromAPI } from 'types/Types';
 import { useSelector } from 'react-redux';
 import { useGetMoviesQuery } from '../../api/api';
 const API_KEY = 'api_key=7bc9e78d64d6eabc0a158c008db80432';
-const CardList = ({
-  getModalInfoCard,
-  changeModalState,
-}: {
-  getModalInfoCard: (obj: object) => void;
-  changeModalState: (value: boolean) => void;
-}) => {
+const CardList = ({ getModalCardId }: { getModalCardId: (value: number) => void }) => {
   const { value } = useSelector((state: { search: { value: string } }) => state.search);
 
   const { isLoading, data } = useGetMoviesQuery(
@@ -35,8 +29,7 @@ const CardList = ({
                 poster_path={card.poster_path}
                 title={card.title}
                 release_date={card.release_date}
-                getModalInfoCard={getModalInfoCard}
-                changeModalState={changeModalState}
+                getModalCardId={getModalCardId}
               />
             );
           })}
