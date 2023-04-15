@@ -14,7 +14,7 @@ const testObj = {
 const testArr = Array(5).fill(testObj);
 
 describe('FeedBackCollection', () => {
-  render(<FeedBackCollection cards={testArr} />);
+  render(<FeedBackCollection />);
   it('Collection should show all cards from array', () => {
     const cards = screen.getAllByTestId('feedback-card');
     expect(cards).toHaveLength(testArr.length);

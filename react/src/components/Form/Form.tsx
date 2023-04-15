@@ -6,16 +6,21 @@ import SelectInput from './FormComponents/SelectInput';
 import CheckBoxInput from './FormComponents/CheckBoxInput';
 import RadioInput from './FormComponents/RadioInput';
 import FileInput from './FormComponents/FileInput';
-import { FeedBackCard, PropsForm, FeedBackCardFromHook } from 'types/Types';
+import { FeedBackCard, FeedBackCardFromHook } from 'types/Types';
+import { useDispatch } from 'react-redux';
+import { actions } from '../../reducers/formSlice';
 import './Form.scss';
 
-const Form = ({ addFeedBackToState }: PropsForm) => {
+type ChangeVisibilityPopap = (value: boolean) => void;
+
+const Form = ({ changeVisibilityPopap }: { changeVisibilityPopap: ChangeVisibilityPopap }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm({ mode: 'onSubmit', reValidateMode: 'onSubmit' });
+  const dispatch = useDispatch();
   const [submited, setSubmited] = useState(false);
   const onSubmit = async (data: FeedBackCardFromHook) => {
     const myCard: FeedBackCard = {
@@ -25,10 +30,11 @@ const Form = ({ addFeedBackToState }: PropsForm) => {
       select: data.select,
       checkBoxes: data.checkBox,
       radio: data.radio,
-      image: data.image ? data.image[0] : '',
+      image: data.image ? URL.createObjectURL(data.image[0] as Blob) : '',
     };
-    addFeedBackToState(myCard);
-    setSubmited((prev) => !prev);
+
+    dispatch(actions.addFeedBack(myCard));
+    changeVisibilityPopap(true);
     reset();
   };
 

@@ -1,9 +1,11 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { reducer as writeSearch } from '../reducers/searchSlice';
+import { reducer as addCard } from '../reducers/formSlice';
 import { api } from '../api/api';
 
 const reducers = combineReducers({
   search: writeSearch,
+  feedBacks: addCard,
   [api.reducerPath]: api.reducer,
 });
 export const store = configureStore({

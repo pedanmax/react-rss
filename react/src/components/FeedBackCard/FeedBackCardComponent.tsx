@@ -17,7 +17,7 @@ const FeedBackCardComponent = ({ obj }: { obj: FeedBackCard }) => {
 
   let wayToImage;
   if (obj.image) {
-    wayToImage = URL.createObjectURL(obj.image as Blob);
+    wayToImage = obj.image as string;
   } else wayToImage = img;
 
   return (
