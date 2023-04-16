@@ -1,6 +1,7 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import FeedBackCardComponent from '../components/FeedBackCard/FeedBackCardComponent';
+import renderWithProviders from './renderWithProviders';
 
 const testObj = {
   name: 'Maks',
@@ -13,7 +14,7 @@ const testObj = {
 };
 
 beforeEach(() => {
-  render(<FeedBackCardComponent obj={testObj} />);
+  renderWithProviders(<FeedBackCardComponent obj={testObj} />);
 });
 
 describe('FeedBackCardComponent', () => {

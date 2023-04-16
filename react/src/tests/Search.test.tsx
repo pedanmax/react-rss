@@ -1,12 +1,12 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import Search from '../components/Search/Search';
-import { vi } from 'vitest';
+import renderWithProviders from './renderWithProviders';
 
 describe('Search component', () => {
   it('have search input', () => {
-    render(<Search />);
+    renderWithProviders(<Search />);
     const searchInput = screen.getByRole('searchbox');
     expect(searchInput).toBeInTheDocument();
   });

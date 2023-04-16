@@ -1,9 +1,10 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import FormPage from '../pages/FormPage/FormPage';
+import renderWithProviders from './renderWithProviders';
 
 beforeEach(() => {
-  render(<FormPage />);
+  renderWithProviders(<FormPage />);
 });
 describe('FormPage', () => {
   it('Form page should contains title with current text', () => {

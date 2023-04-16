@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Search from '../../components/Search/Search';
 import CardList from '../../components/CardList/CardList';
 import ModalCard from '../../components/ModalCard/ModalCard';
-import { ModalCardType } from 'types/Types';
 import './Home.scss';
 
 const Home = () => {
   const [modalCardId, setModalCardId] = useState<number | string>('');
-  const [openModal, setOpenModal] = useState(false);
+  const [, setOpenModal] = useState(false);
 
   const getModalCardId = (value: number | string) => {
     setModalCardId(value);

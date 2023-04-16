@@ -5,7 +5,6 @@ import './ModalCard.scss';
 
 const ModalCard = ({
   modalCardId,
-  changeModalState,
   getModalCardId,
 }: {
   modalCardId: number | string;

@@ -1,11 +1,12 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import { fireEvent } from '@testing-library/react';
 import { server } from '../mocks/server';
 import Home from '../pages/Home/Home';
+import renderWithProviders from './renderWithProviders';
 
-beforeEach(() => render(<Home />));
+beforeEach(() => renderWithProviders(<Home />));
 beforeAll(() => {
   server.listen({
     onUnhandledRequest: 'bypass',
@@ -45,7 +46,7 @@ describe('Home component', () => {
   });
 
   it('Draw info in modal window from api', async () => {
-    render(<Home />);
+    renderWithProviders(<Home />);
     const button = await screen.findAllByTestId('button');
     fireEvent.click(button[1]);
     expect(

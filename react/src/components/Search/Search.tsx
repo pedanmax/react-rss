@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import { Props } from 'types/Types';
 import { useSelector, useDispatch } from 'react-redux';
 import { actions } from '../../reducers/searchSlice';
 import '../../pages/home/Home.scss';

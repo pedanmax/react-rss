@@ -21,7 +21,7 @@ const Form = ({ changeVisibilityPopap }: { changeVisibilityPopap: ChangeVisibili
     reset,
   } = useForm({ mode: 'onSubmit', reValidateMode: 'onSubmit' });
   const dispatch = useDispatch();
-  const [submited, setSubmited] = useState(false);
+  const [submited] = useState(false);
   const onSubmit = async (data: FeedBackCardFromHook) => {
     const myCard: FeedBackCard = {
       name: data.name,
