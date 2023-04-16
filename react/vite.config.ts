@@ -19,6 +19,7 @@ export default defineConfig({
       enabled: true, // or 'istanbul'
       reporter: ['text'],
       include: ['**/*.{jsx,tsx}'],
+      exclude: ['src/main.tsx'],
     },
   },
 });
