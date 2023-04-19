@@ -1,23 +1,14 @@
 import React from 'react';
 import Header from './components/Header/Header';
-import Home from './pages/Home/Home';
-import About from './pages/About/About';
-import NotFound from './pages/NotFound/NotFound';
-import { Routes, Route } from 'react-router-dom';
+import Router from './routes/router';
 import './App.scss';
-import Form from './pages/FormPage/FormPage';
 
 const App = () => {
   return (
     <div className='app'>
       <Header />
       <main className='main'>
-        <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/about' element={<About />}></Route>
-          <Route path='/form' element={<Form />}></Route>
-          <Route path='*' element={<NotFound />}></Route>
-        </Routes>
+        <Router />
       </main>
     </div>
   );
