@@ -2,13 +2,10 @@ import React, { useRef, useState } from 'react';
 import Form from '../../components/Form/Form';
 import FeedBackCollection from '../../components/FeedBackCollection/FeedBackCollection';
 import Popap from '../../components/Popap/Popap';
-import { useSelector } from 'react-redux';
 import './FormPage.scss';
 
 const FormPage = () => {
   const [showPopap, setShowPopap] = useState(false);
-  const state = useSelector((state) => state);
-  console.log(state);
   const popap = useRef<HTMLDivElement>(null);
   const showMessage = () => {
     const myPopap = popap.current;
@@ -21,7 +18,6 @@ const FormPage = () => {
     setShowPopap(false);
   };
   const changeVisibilityPopap = (value: boolean) => setShowPopap(value);
-  console.log(showPopap);
   showPopap ? showMessage() : null;
   return (
     <div className='form-page'>

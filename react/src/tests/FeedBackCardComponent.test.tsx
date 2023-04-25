@@ -1,5 +1,6 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
+import { it, describe, expect } from 'vitest';
 import FeedBackCardComponent from '../components/FeedBackCard/FeedBackCardComponent';
 import renderWithProviders from './renderWithProviders';
 
