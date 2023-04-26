@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint": "npx eslint src",
     "test": "vitest",
-    "cypress": "cypress open",
+    "cypress": "npx rimraf coverage && npx rimraf .nyc_output && cypress open",
     "test:clean": "npx rimraf coverage && npx rimraf .nyc_output",
     "cypress:screen": "npx rimraf coverage && npx rimraf .nyc_output && npx cypress run --e2e && npx nyc report --reporter=text-summary",
     "ci": "start-server-and-test dev http://localhost:5173 cypress:screen",
