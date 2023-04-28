@@ -84,6 +84,7 @@ export type InputPropsText = {
   name: string;
   error?: string;
   validate: ValidateNames;
+  id: string;
 };
 
 export type SelectInputProps = {

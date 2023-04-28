@@ -1,7 +1,7 @@
 import React from 'react';
 import { InputPropsText } from 'types/Types';
 
-const TextInput = ({ error, label, name, refProp, validate }: InputPropsText) => {
+const TextInput = ({ error, label, name, refProp, validate, id }: InputPropsText) => {
   return (
     <div className='form__box'>
       <input
@@ -14,6 +14,7 @@ const TextInput = ({ error, label, name, refProp, validate }: InputPropsText) =>
           },
           validate: validate,
         })}
+        id={id}
         className='form__name input'
         autoComplete='off'
         style={{ boxShadow: !error ? '0 0 0px 0px red' : '0 0 5px 2px red' }}

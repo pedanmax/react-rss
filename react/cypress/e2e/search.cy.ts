@@ -1,3 +1,4 @@
+import cypress from 'cypress';
 beforeEach(() => {
   cy.visit('/');
 });

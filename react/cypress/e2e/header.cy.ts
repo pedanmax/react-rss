@@ -1,3 +1,4 @@
+import cypress from 'cypress';
 describe('Header', () => {
   it('successfully load header title', () => {
     cy.visit('/');
