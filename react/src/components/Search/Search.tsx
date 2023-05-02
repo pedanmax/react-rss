@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { actions } from '../../reducers/searchSlice';
-import '../../pages/home/Home.scss';
+import '../../pages/Home/Home.scss';
 
 type State = { search: { value: string } };
 
