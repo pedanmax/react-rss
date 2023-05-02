@@ -1,0 +1,46 @@
+.card {
+  flex: 1 1 27%;
+  position: relative;
+  box-shadow: 0 0 10px 0px #000;
+  border-radius: 10px;
+  background: #dfdfdf;
+  min-width: 200px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  &__title {
+    font-weight: 700;
+  }
+  &__img {
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  &__button {
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 5px 1px #000;
+    background: #ffffff;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: #c4c4c4;
+    }
+  }
+}
+.card:first-child {
+}
