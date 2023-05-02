@@ -1,6 +1,6 @@
 import React from 'react';
 import { screen, fireEvent } from '@testing-library/react';
-import Header from '../components/Header/Header';
+import Header from '../components/HeaderComponent/Header';
 
 import { describe, it, expect } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
